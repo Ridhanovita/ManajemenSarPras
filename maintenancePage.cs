@@ -17,9 +17,11 @@ namespace ManajemenSarPras
             InitializeComponent();
         }
 
-        private void kelolaBarang_Click(object sender, EventArgs e)
+        private void btnKembali_Click(object sender, EventArgs e)
         {
-
+            dashboardPage dashboard = new dashboardPage();
+            dashboard.Show();
+            this.Hide();
         }
     }
 }

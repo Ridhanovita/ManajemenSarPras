@@ -1,6 +1,6 @@
 ﻿namespace ManajemenSarPras
 {
-    partial class PemintaanBarang
+    partial class maintenancePage
     {
         /// <summary>
         /// Required designer variable.
@@ -28,12 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.btnKembali = new System.Windows.Forms.Button();
+            this.SuspendLayout();
+            // 
+            // btnKembali
+            // 
+            this.btnKembali.Location = new System.Drawing.Point(45, 380);
+            this.btnKembali.Name = "btnKembali";
+            this.btnKembali.Size = new System.Drawing.Size(109, 42);
+            this.btnKembali.TabIndex = 0;
+            this.btnKembali.Text = "Kembali";
+            this.btnKembali.UseVisualStyleBackColor = true;
+            this.btnKembali.Click += new System.EventHandler(this.btnKembali_Click);
+            // 
+            // maintenancePage
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "PeminjamanBarang";
+            this.Controls.Add(this.btnKembali);
+            this.Name = "maintenancePage";
+            this.Text = "mntenncePage";
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private System.Windows.Forms.Button btnKembali;
     }
 }

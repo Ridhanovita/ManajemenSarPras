@@ -10,11 +10,18 @@ using System.Windows.Forms;
 
 namespace ManajemenSarPras
 {
-    public partial class mntenncePage: Form
+    public partial class pengecekanRutin: Form
     {
-        public mntenncePage()
+        public pengecekanRutin()
         {
             InitializeComponent();
+        }
+
+        private void btnKembali_Click(object sender, EventArgs e)
+        {
+            dashboardPage dashboard = new dashboardPage();
+            dashboard.Show();
+            this.Hide();
         }
     }
 }
