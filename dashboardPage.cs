@@ -10,11 +10,18 @@ using System.Windows.Forms;
 
 namespace ManajemenSarPras
 {
-    public partial class PemintaanBarang: Form
+    public partial class maintenancePage: Form
     {
-        public PemintaanBarang()
+        public maintenancePage()
         {
             InitializeComponent();
         }
+
+        private void kelolaBarang_Click(object sender, EventArgs e)
+        {
+            kelolaBarang kelolaBarang = new kelolaBarang();
+            kelolaBarang.Show();
+        }
+
     }
 }

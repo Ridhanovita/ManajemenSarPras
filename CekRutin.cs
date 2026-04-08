@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace ManajemenSarPras
 {
-    public partial class CekRutin: Form
+    public partial class cekRutin: Form
     {
-        public CekRutin()
+        public cekRutin()
         {
             InitializeComponent();
         }

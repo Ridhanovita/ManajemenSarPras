@@ -46,17 +46,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CekRutin.cs">
+    <Compile Include="cekRutin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CekRutin.Designer.cs">
-      <DependentUpon>CekRutin.cs</DependentUpon>
+    <Compile Include="cekRutin.Designer.cs">
+      <DependentUpon>cekRutin.cs</DependentUpon>
     </Compile>
-    <Compile Include="dahsboardPage.cs">
+    <Compile Include="dashboardPage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="dahsboardPage.Designer.cs">
-      <DependentUpon>dahsboardPage.cs</DependentUpon>
+    <Compile Include="dashboardPage.Designer.cs">
+      <DependentUpon>dashboardPage.cs</DependentUpon>
     </Compile>
     <Compile Include="kelolaBarang.cs">
       <SubType>Form</SubType>
@@ -64,28 +64,31 @@
     <Compile Include="kelolaBarang.Designer.cs">
       <DependentUpon>kelolaBarang.cs</DependentUpon>
     </Compile>
-    <Compile Include="mntenncePage.cs">
+    <Compile Include="maintenancePage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="mntenncePage.Designer.cs">
-      <DependentUpon>mntenncePage.cs</DependentUpon>
+    <Compile Include="maintenancePage.Designer.cs">
+      <DependentUpon>maintenancePage.cs</DependentUpon>
     </Compile>
-    <Compile Include="PemintaanBarang.cs">
+    <Compile Include="permintaanBarang.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PemintaanBarang.Designer.cs">
-      <DependentUpon>PemintaanBarang.cs</DependentUpon>
+    <Compile Include="permintaanBarang.Designer.cs">
+      <DependentUpon>permintaanBarang.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ReportPage.cs">
+    <Compile Include="reportPage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ReportPage.Designer.cs">
-      <DependentUpon>ReportPage.cs</DependentUpon>
+    <Compile Include="reportPage.Designer.cs">
+      <DependentUpon>reportPage.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="dahsboardPage.resx">
-      <DependentUpon>dahsboardPage.cs</DependentUpon>
+    <EmbeddedResource Include="dashboardPage.resx">
+      <DependentUpon>dashboardPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="maintenancePage.resx">
+      <DependentUpon>maintenancePage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

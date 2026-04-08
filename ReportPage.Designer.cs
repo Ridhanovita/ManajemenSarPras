@@ -1,6 +1,6 @@
 ﻿namespace ManajemenSarPras
 {
-    partial class ReportPage
+    partial class reportPage
     {
         /// <summary>
         /// Required designer variable.

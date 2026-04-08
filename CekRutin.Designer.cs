@@ -1,6 +1,6 @@
 ﻿namespace ManajemenSarPras
 {
-    partial class CekRutin
+    partial class cekRutin
     {
         /// <summary>
         /// Required designer variable.

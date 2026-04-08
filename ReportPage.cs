@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace ManajemenSarPras
 {
-    public partial class ReportPage: Form
+    public partial class reportPage: Form
     {
-        public ReportPage()
+        public reportPage()
         {
             InitializeComponent();
         }
