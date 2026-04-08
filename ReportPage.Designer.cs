@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.btnKembali = new System.Windows.Forms.Button();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // btnKembali
@@ -41,11 +42,19 @@
             this.btnKembali.UseVisualStyleBackColor = true;
             this.btnKembali.Click += new System.EventHandler(this.btnKembali_Click);
             // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(292, 56);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(200, 22);
+            this.dateTimePicker1.TabIndex = 1;
+            // 
             // reportPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.btnKembali);
             this.Name = "reportPage";
             this.Text = "ReportPage";
@@ -56,5 +65,6 @@
         #endregion
 
         private System.Windows.Forms.Button btnKembali;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
     }
 }
