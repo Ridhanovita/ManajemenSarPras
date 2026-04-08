@@ -33,6 +33,7 @@
             this.pengecekanRutin = new System.Windows.Forms.Button();
             this.maintennce = new System.Windows.Forms.Button();
             this.report = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // kelolaBarang
@@ -90,11 +91,20 @@
             this.report.UseVisualStyleBackColor = true;
             this.report.Click += new System.EventHandler(this.report_Click);
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(191, 30);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(294, 22);
+            this.textBox1.TabIndex = 6;
+            this.textBox1.Text = "selamat datang admin, semangat input datanya";
+            // 
             // dashboardPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(711, 360);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.report);
             this.Controls.Add(this.maintennce);
             this.Controls.Add(this.pengecekanRutin);
@@ -104,6 +114,7 @@
             this.Name = "dashboardPage";
             this.Text = "dashboardPage";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -114,6 +125,7 @@
         private System.Windows.Forms.Button pengecekanRutin;
         private System.Windows.Forms.Button maintennce;
         private System.Windows.Forms.Button report;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
 
