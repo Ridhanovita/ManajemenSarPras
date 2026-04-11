@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace ManajemenSarPras
 {
-    public partial class pengecekanRutin: Form
+    public partial class karyawanRutin: Form
     {
-        public pengecekanRutin()
+        public karyawanRutin()
         {
             InitializeComponent();
         }

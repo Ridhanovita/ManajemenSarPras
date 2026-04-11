@@ -1,6 +1,6 @@
 ﻿namespace ManajemenSarPras
 {
-    partial class pengecekanRutin
+    partial class karyawanRutin
     {
         /// <summary>
         /// Required designer variable.
