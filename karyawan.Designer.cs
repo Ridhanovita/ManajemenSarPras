@@ -1,6 +1,6 @@
 ﻿namespace ManajemenSarPras
 {
-    partial class karyawanRutin
+    partial class karyawan
     {
         /// <summary>
         /// Required designer variable.
@@ -29,32 +29,221 @@
         private void InitializeComponent()
         {
             this.btnKembali = new System.Windows.Forms.Button();
+            this.labelTitle = new System.Windows.Forms.Label();
+            this.richTextBox3 = new System.Windows.Forms.RichTextBox();
+            this.labelIdKaryawan = new System.Windows.Forms.Label();
+            this.btnTambahKaryawan = new System.Windows.Forms.Button();
+            this.btnUpdateKaryawan = new System.Windows.Forms.Button();
+            this.btnDeleteKaryawan = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnCariKaryawan = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnKembali
             // 
-            this.btnKembali.Location = new System.Drawing.Point(52, 375);
+            this.btnKembali.Location = new System.Drawing.Point(12, 13);
+            this.btnKembali.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnKembali.Name = "btnKembali";
-            this.btnKembali.Size = new System.Drawing.Size(110, 45);
+            this.btnKembali.Size = new System.Drawing.Size(124, 56);
             this.btnKembali.TabIndex = 0;
             this.btnKembali.Text = "Kembali";
             this.btnKembali.UseVisualStyleBackColor = true;
             this.btnKembali.Click += new System.EventHandler(this.btnKembali_Click);
             // 
-            // pengecekanRutin
+            // labelTitle
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.labelTitle.AutoSize = true;
+            this.labelTitle.Font = new System.Drawing.Font("Stencil", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTitle.Location = new System.Drawing.Point(313, 58);
+            this.labelTitle.Name = "labelTitle";
+            this.labelTitle.Size = new System.Drawing.Size(455, 38);
+            this.labelTitle.TabIndex = 20;
+            this.labelTitle.Text = "PENGELOLAHAN KARYAWAN";
+            // 
+            // richTextBox3
+            // 
+            this.richTextBox3.Location = new System.Drawing.Point(187, 259);
+            this.richTextBox3.Name = "richTextBox3";
+            this.richTextBox3.Size = new System.Drawing.Size(234, 43);
+            this.richTextBox3.TabIndex = 24;
+            this.richTextBox3.Text = "";
+            // 
+            // labelIdKaryawan
+            // 
+            this.labelIdKaryawan.AutoSize = true;
+            this.labelIdKaryawan.Location = new System.Drawing.Point(60, 262);
+            this.labelIdKaryawan.Name = "labelIdKaryawan";
+            this.labelIdKaryawan.Size = new System.Drawing.Size(101, 40);
+            this.labelIdKaryawan.TabIndex = 23;
+            this.labelIdKaryawan.Text = "NAMA\r\nKARYAWAN";
+            // 
+            // btnTambahKaryawan
+            // 
+            this.btnTambahKaryawan.Location = new System.Drawing.Point(64, 343);
+            this.btnTambahKaryawan.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnTambahKaryawan.Name = "btnTambahKaryawan";
+            this.btnTambahKaryawan.Size = new System.Drawing.Size(174, 56);
+            this.btnTambahKaryawan.TabIndex = 25;
+            this.btnTambahKaryawan.Text = "TAMBAH";
+            this.btnTambahKaryawan.UseVisualStyleBackColor = true;
+            // 
+            // btnUpdateKaryawan
+            // 
+            this.btnUpdateKaryawan.Location = new System.Drawing.Point(262, 343);
+            this.btnUpdateKaryawan.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnUpdateKaryawan.Name = "btnUpdateKaryawan";
+            this.btnUpdateKaryawan.Size = new System.Drawing.Size(159, 56);
+            this.btnUpdateKaryawan.TabIndex = 26;
+            this.btnUpdateKaryawan.Text = "UPDATE";
+            this.btnUpdateKaryawan.UseVisualStyleBackColor = true;
+            // 
+            // btnDeleteKaryawan
+            // 
+            this.btnDeleteKaryawan.Location = new System.Drawing.Point(64, 414);
+            this.btnDeleteKaryawan.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnDeleteKaryawan.Name = "btnDeleteKaryawan";
+            this.btnDeleteKaryawan.Size = new System.Drawing.Size(357, 56);
+            this.btnDeleteKaryawan.TabIndex = 27;
+            this.btnDeleteKaryawan.Text = "HAPUS";
+            this.btnDeleteKaryawan.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(453, 210);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 62;
+            this.dataGridView1.RowTemplate.Height = 28;
+            this.dataGridView1.Size = new System.Drawing.Size(624, 332);
+            this.dataGridView1.TabIndex = 28;
+            // 
+            // richTextBox1
+            // 
+            this.richTextBox1.Location = new System.Drawing.Point(568, 139);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(379, 56);
+            this.richTextBox1.TabIndex = 31;
+            this.richTextBox1.Text = "";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(449, 142);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(113, 44);
+            this.label1.TabIndex = 30;
+            this.label1.Text = "CARI \r\nKARYAWAN";
+            // 
+            // btnCariKaryawan
+            // 
+            this.btnCariKaryawan.Location = new System.Drawing.Point(953, 139);
+            this.btnCariKaryawan.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnCariKaryawan.Name = "btnCariKaryawan";
+            this.btnCariKaryawan.Size = new System.Drawing.Size(124, 56);
+            this.btnCariKaryawan.TabIndex = 29;
+            this.btnCariKaryawan.Text = "CARI";
+            this.btnCariKaryawan.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(64, 343);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(174, 56);
+            this.button1.TabIndex = 25;
+            this.button1.Text = "TAMBAH";
+            this.button1.UseVisualStyleBackColor = false;
+            // 
+            // button2
+            // 
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(262, 343);
+            this.button2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(159, 56);
+            this.button2.TabIndex = 26;
+            this.button2.Text = "UPDATE";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.Red;
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button3.Location = new System.Drawing.Point(64, 414);
+            this.button3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(357, 56);
+            this.button3.TabIndex = 27;
+            this.button3.Text = "HAPUS";
+            this.button3.UseVisualStyleBackColor = false;
+            // 
+            // button4
+            // 
+            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.Location = new System.Drawing.Point(953, 139);
+            this.button4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(124, 56);
+            this.button4.TabIndex = 29;
+            this.button4.Text = "CARI";
+            this.button4.UseVisualStyleBackColor = true;
+            // 
+            // karyawan
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1107, 586);
+            this.Controls.Add(this.richTextBox1);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.button4);
+            this.Controls.Add(this.btnCariKaryawan);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnDeleteKaryawan);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnUpdateKaryawan);
+            this.Controls.Add(this.btnTambahKaryawan);
+            this.Controls.Add(this.richTextBox3);
+            this.Controls.Add(this.labelIdKaryawan);
+            this.Controls.Add(this.labelTitle);
             this.Controls.Add(this.btnKembali);
-            this.Name = "pengecekanRutin";
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.Name = "karyawan";
             this.Text = "CekRutin";
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.Button btnKembali;
+        private System.Windows.Forms.Label labelTitle;
+        private System.Windows.Forms.RichTextBox richTextBox3;
+        private System.Windows.Forms.Label labelIdKaryawan;
+        private System.Windows.Forms.Button btnTambahKaryawan;
+        private System.Windows.Forms.Button btnUpdateKaryawan;
+        private System.Windows.Forms.Button btnDeleteKaryawan;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnCariKaryawan;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button4;
     }
 }
