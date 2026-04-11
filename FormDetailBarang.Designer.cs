@@ -1,0 +1,254 @@
+﻿namespace ManajemenSarPras
+{
+    partial class FormDetailBarang
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.labelNamaBarang = new System.Windows.Forms.Label();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.labelGedung = new System.Windows.Forms.Label();
+            this.richTextBox3 = new System.Windows.Forms.RichTextBox();
+            this.labelIdDetailBarang = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnKembali = new System.Windows.Forms.Button();
+            this.btnTambahDetailBarang = new System.Windows.Forms.Button();
+            this.btnUpdateDetailBarang = new System.Windows.Forms.Button();
+            this.btnHapusDetailBarang = new System.Windows.Forms.Button();
+            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
+            this.labelCariDetailBarang = new System.Windows.Forms.Label();
+            this.btnCari = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(379, 170);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 62;
+            this.dataGridView1.RowTemplate.Height = 28;
+            this.dataGridView1.Size = new System.Drawing.Size(548, 371);
+            this.dataGridView1.TabIndex = 0;
+            // 
+            // labelNamaBarang
+            // 
+            this.labelNamaBarang.AutoSize = true;
+            this.labelNamaBarang.Location = new System.Drawing.Point(19, 188);
+            this.labelNamaBarang.Name = "labelNamaBarang";
+            this.labelNamaBarang.Size = new System.Drawing.Size(78, 40);
+            this.labelNamaBarang.TabIndex = 1;
+            this.labelNamaBarang.Text = "NAMA\r\nBARANG";
+            // 
+            // richTextBox1
+            // 
+            this.richTextBox1.Location = new System.Drawing.Point(119, 185);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(234, 43);
+            this.richTextBox1.TabIndex = 3;
+            this.richTextBox1.Text = "";
+            // 
+            // labelGedung
+            // 
+            this.labelGedung.AutoSize = true;
+            this.labelGedung.Location = new System.Drawing.Point(19, 257);
+            this.labelGedung.Name = "labelGedung";
+            this.labelGedung.Size = new System.Drawing.Size(81, 20);
+            this.labelGedung.TabIndex = 4;
+            this.labelGedung.Text = "GEDUNG";
+            this.labelGedung.Click += new System.EventHandler(this.labelKodeRuangan_Click);
+            // 
+            // richTextBox3
+            // 
+            this.richTextBox3.Location = new System.Drawing.Point(119, 122);
+            this.richTextBox3.Name = "richTextBox3";
+            this.richTextBox3.Size = new System.Drawing.Size(234, 43);
+            this.richTextBox3.TabIndex = 7;
+            this.richTextBox3.Text = "";
+            // 
+            // labelIdDetailBarang
+            // 
+            this.labelIdDetailBarang.AutoSize = true;
+            this.labelIdDetailBarang.Location = new System.Drawing.Point(19, 125);
+            this.labelIdDetailBarang.Name = "labelIdDetailBarang";
+            this.labelIdDetailBarang.Size = new System.Drawing.Size(87, 40);
+            this.labelIdDetailBarang.TabIndex = 6;
+            this.labelIdDetailBarang.Text = "ID DETAIL\r\nBARANG";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(119, 304);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(234, 28);
+            this.comboBox1.TabIndex = 8;
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(119, 254);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(234, 28);
+            this.comboBox2.TabIndex = 9;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(19, 307);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(90, 20);
+            this.label1.TabIndex = 10;
+            this.label1.Text = "RUANGAN";
+            // 
+            // btnKembali
+            // 
+            this.btnKembali.Location = new System.Drawing.Point(23, 12);
+            this.btnKembali.Name = "btnKembali";
+            this.btnKembali.Size = new System.Drawing.Size(103, 44);
+            this.btnKembali.TabIndex = 11;
+            this.btnKembali.Text = "Kembali";
+            this.btnKembali.UseVisualStyleBackColor = true;
+            // 
+            // btnTambahDetailBarang
+            // 
+            this.btnTambahDetailBarang.Location = new System.Drawing.Point(23, 360);
+            this.btnTambahDetailBarang.Name = "btnTambahDetailBarang";
+            this.btnTambahDetailBarang.Size = new System.Drawing.Size(163, 55);
+            this.btnTambahDetailBarang.TabIndex = 12;
+            this.btnTambahDetailBarang.Text = "Tambah Detail \r\nBarang";
+            this.btnTambahDetailBarang.UseVisualStyleBackColor = true;
+            // 
+            // btnUpdateDetailBarang
+            // 
+            this.btnUpdateDetailBarang.Location = new System.Drawing.Point(192, 360);
+            this.btnUpdateDetailBarang.Name = "btnUpdateDetailBarang";
+            this.btnUpdateDetailBarang.Size = new System.Drawing.Size(161, 55);
+            this.btnUpdateDetailBarang.TabIndex = 13;
+            this.btnUpdateDetailBarang.Text = "Update Detail\r\nBarang";
+            this.btnUpdateDetailBarang.UseVisualStyleBackColor = true;
+            // 
+            // btnHapusDetailBarang
+            // 
+            this.btnHapusDetailBarang.Location = new System.Drawing.Point(109, 423);
+            this.btnHapusDetailBarang.Name = "btnHapusDetailBarang";
+            this.btnHapusDetailBarang.Size = new System.Drawing.Size(161, 55);
+            this.btnHapusDetailBarang.TabIndex = 14;
+            this.btnHapusDetailBarang.Text = "Hapus Detail\r\nBarang";
+            this.btnHapusDetailBarang.UseVisualStyleBackColor = true;
+            // 
+            // richTextBox2
+            // 
+            this.richTextBox2.Location = new System.Drawing.Point(494, 115);
+            this.richTextBox2.Name = "richTextBox2";
+            this.richTextBox2.Size = new System.Drawing.Size(326, 43);
+            this.richTextBox2.TabIndex = 15;
+            this.richTextBox2.Text = "";
+            // 
+            // labelCariDetailBarang
+            // 
+            this.labelCariDetailBarang.AutoSize = true;
+            this.labelCariDetailBarang.Location = new System.Drawing.Point(380, 118);
+            this.labelCariDetailBarang.Margin = new System.Windows.Forms.Padding(3, 0, 0, 0);
+            this.labelCariDetailBarang.Name = "labelCariDetailBarang";
+            this.labelCariDetailBarang.Size = new System.Drawing.Size(113, 40);
+            this.labelCariDetailBarang.TabIndex = 16;
+            this.labelCariDetailBarang.Text = "CARI DETAIL \r\nBARANG";
+            // 
+            // btnCari
+            // 
+            this.btnCari.Location = new System.Drawing.Point(828, 115);
+            this.btnCari.Name = "btnCari";
+            this.btnCari.Size = new System.Drawing.Size(99, 43);
+            this.btnCari.TabIndex = 17;
+            this.btnCari.Text = "CARI";
+            this.btnCari.UseVisualStyleBackColor = true;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Stencil", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(197, 18);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(530, 38);
+            this.label2.TabIndex = 18;
+            this.label2.Text = "PENGELOLAHAN DETAIL BARANG";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
+            // 
+            // FormDetailBarang
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(939, 563);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.btnCari);
+            this.Controls.Add(this.labelCariDetailBarang);
+            this.Controls.Add(this.richTextBox2);
+            this.Controls.Add(this.btnHapusDetailBarang);
+            this.Controls.Add(this.btnUpdateDetailBarang);
+            this.Controls.Add(this.btnTambahDetailBarang);
+            this.Controls.Add(this.btnKembali);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.richTextBox3);
+            this.Controls.Add(this.labelIdDetailBarang);
+            this.Controls.Add(this.labelGedung);
+            this.Controls.Add(this.richTextBox1);
+            this.Controls.Add(this.labelNamaBarang);
+            this.Controls.Add(this.dataGridView1);
+            this.Name = "FormDetailBarang";
+            this.Text = "FormDetailBarang";
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
+        }
+
+        #endregion
+
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Label labelNamaBarang;
+        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.Label labelGedung;
+        private System.Windows.Forms.RichTextBox richTextBox3;
+        private System.Windows.Forms.Label labelIdDetailBarang;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnKembali;
+        private System.Windows.Forms.Button btnTambahDetailBarang;
+        private System.Windows.Forms.Button btnUpdateDetailBarang;
+        private System.Windows.Forms.Button btnHapusDetailBarang;
+        private System.Windows.Forms.RichTextBox richTextBox2;
+        private System.Windows.Forms.Label labelCariDetailBarang;
+        private System.Windows.Forms.Button btnCari;
+        private System.Windows.Forms.Label label2;
+    }
+}

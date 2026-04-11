@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FormDetailBarang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDetailBarang.Designer.cs">
+      <DependentUpon>FormDetailBarang.cs</DependentUpon>
+    </Compile>
     <Compile Include="pengecekanRutin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -86,6 +92,9 @@
     </Compile>
     <EmbeddedResource Include="dashboardPage.resx">
       <DependentUpon>dashboardPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDetailBarang.resx">
+      <DependentUpon>FormDetailBarang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="kelolaBarang.resx">
       <DependentUpon>kelolaBarang.cs</DependentUpon>

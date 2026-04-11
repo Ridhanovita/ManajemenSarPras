@@ -42,6 +42,10 @@
             this.btnUpdateBarang = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
+            this.labelTipeBarang = new System.Windows.Forms.Label();
+            this.cmbTipeBarang = new System.Windows.Forms.ComboBox();
+            this.labelJumlahBarang = new System.Windows.Forms.Label();
+            this.txtJumlahBarang = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -59,7 +63,7 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(24, 204);
+            this.dataGridView1.Location = new System.Drawing.Point(24, 320);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 28;
@@ -165,11 +169,52 @@
             this.button3.Text = "Detail Barang";
             this.button3.UseVisualStyleBackColor = true;
             // 
+            // labelTipeBarang
+            // 
+            this.labelTipeBarang.AutoSize = true;
+            this.labelTipeBarang.Location = new System.Drawing.Point(20, 206);
+            this.labelTipeBarang.Name = "labelTipeBarang";
+            this.labelTipeBarang.Size = new System.Drawing.Size(117, 20);
+            this.labelTipeBarang.TabIndex = 13;
+            this.labelTipeBarang.Text = "TIPE BARANG";
+            this.labelTipeBarang.Click += new System.EventHandler(this.label2_Click_1);
+            // 
+            // cmbTipeBarang
+            // 
+            this.cmbTipeBarang.FormattingEnabled = true;
+            this.cmbTipeBarang.Items.AddRange(new object[] {
+            "Perlu Pengecekkan Rutin",
+            "Tidak Perlu Pengecekkan Rutin"});
+            this.cmbTipeBarang.Location = new System.Drawing.Point(184, 206);
+            this.cmbTipeBarang.Name = "cmbTipeBarang";
+            this.cmbTipeBarang.Size = new System.Drawing.Size(289, 28);
+            this.cmbTipeBarang.TabIndex = 14;
+            // 
+            // labelJumlahBarang
+            // 
+            this.labelJumlahBarang.AutoSize = true;
+            this.labelJumlahBarang.Location = new System.Drawing.Point(20, 259);
+            this.labelJumlahBarang.Name = "labelJumlahBarang";
+            this.labelJumlahBarang.Size = new System.Drawing.Size(151, 40);
+            this.labelJumlahBarang.TabIndex = 15;
+            this.labelJumlahBarang.Text = "JUMLAH BARANG \r\nNON-CHECK";
+            // 
+            // txtJumlahBarang
+            // 
+            this.txtJumlahBarang.Location = new System.Drawing.Point(184, 268);
+            this.txtJumlahBarang.Name = "txtJumlahBarang";
+            this.txtJumlahBarang.Size = new System.Drawing.Size(289, 26);
+            this.txtJumlahBarang.TabIndex = 16;
+            // 
             // kelolaBarang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(954, 538);
+            this.ClientSize = new System.Drawing.Size(954, 653);
+            this.Controls.Add(this.txtJumlahBarang);
+            this.Controls.Add(this.labelJumlahBarang);
+            this.Controls.Add(this.cmbTipeBarang);
+            this.Controls.Add(this.labelTipeBarang);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.btnUpdateBarang);
@@ -206,5 +251,9 @@
         private System.Windows.Forms.Button btnUpdateBarang;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Label labelTipeBarang;
+        private System.Windows.Forms.ComboBox cmbTipeBarang;
+        private System.Windows.Forms.Label labelJumlahBarang;
+        private System.Windows.Forms.TextBox txtJumlahBarang;
     }
 }
