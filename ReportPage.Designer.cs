@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.btnKembali = new System.Windows.Forms.Button();
-            this.cmbSemster = new System.Windows.Forms.ComboBox();
+            this.cmbSemester = new System.Windows.Forms.ComboBox();
             this.labelSemester = new System.Windows.Forms.Label();
             this.labelBulan = new System.Windows.Forms.Label();
             this.cmbBulan = new System.Windows.Forms.ComboBox();
@@ -50,18 +50,18 @@
             this.btnKembali.UseVisualStyleBackColor = true;
             this.btnKembali.Click += new System.EventHandler(this.btnKembali_Click);
             // 
-            // cmbSemster
+            // cmbSemester
             // 
-            this.cmbSemster.FormattingEnabled = true;
-            this.cmbSemster.Location = new System.Drawing.Point(164, 183);
-            this.cmbSemster.Name = "cmbSemster";
-            this.cmbSemster.Size = new System.Drawing.Size(264, 28);
-            this.cmbSemster.TabIndex = 1;
+            this.cmbSemester.FormattingEnabled = true;
+            this.cmbSemester.Location = new System.Drawing.Point(163, 239);
+            this.cmbSemester.Name = "cmbSemester";
+            this.cmbSemester.Size = new System.Drawing.Size(751, 28);
+            this.cmbSemester.TabIndex = 1;
             // 
             // labelSemester
             // 
             this.labelSemester.AutoSize = true;
-            this.labelSemester.Location = new System.Drawing.Point(24, 186);
+            this.labelSemester.Location = new System.Drawing.Point(23, 242);
             this.labelSemester.Name = "labelSemester";
             this.labelSemester.Size = new System.Drawing.Size(98, 20);
             this.labelSemester.TabIndex = 3;
@@ -70,7 +70,7 @@
             // labelBulan
             // 
             this.labelBulan.AutoSize = true;
-            this.labelBulan.Location = new System.Drawing.Point(24, 235);
+            this.labelBulan.Location = new System.Drawing.Point(23, 291);
             this.labelBulan.Name = "labelBulan";
             this.labelBulan.Size = new System.Drawing.Size(63, 20);
             this.labelBulan.TabIndex = 5;
@@ -79,15 +79,15 @@
             // cmbBulan
             // 
             this.cmbBulan.FormattingEnabled = true;
-            this.cmbBulan.Location = new System.Drawing.Point(164, 232);
+            this.cmbBulan.Location = new System.Drawing.Point(163, 288);
             this.cmbBulan.Name = "cmbBulan";
-            this.cmbBulan.Size = new System.Drawing.Size(264, 28);
+            this.cmbBulan.Size = new System.Drawing.Size(751, 28);
             this.cmbBulan.TabIndex = 4;
             // 
             // labelTipe
             // 
             this.labelTipe.AutoSize = true;
-            this.labelTipe.Location = new System.Drawing.Point(24, 136);
+            this.labelTipe.Location = new System.Drawing.Point(23, 192);
             this.labelTipe.Name = "labelTipe";
             this.labelTipe.Size = new System.Drawing.Size(44, 20);
             this.labelTipe.TabIndex = 7;
@@ -96,30 +96,32 @@
             // cmbTipe
             // 
             this.cmbTipe.FormattingEnabled = true;
-            this.cmbTipe.Location = new System.Drawing.Point(164, 133);
+            this.cmbTipe.Location = new System.Drawing.Point(163, 189);
             this.cmbTipe.Name = "cmbTipe";
-            this.cmbTipe.Size = new System.Drawing.Size(264, 28);
+            this.cmbTipe.Size = new System.Drawing.Size(751, 28);
             this.cmbTipe.TabIndex = 6;
+            this.cmbTipe.SelectedIndexChanged += new System.EventHandler(this.cmbTipe_SelectedIndexChanged);
             // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.Lime;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button1.Location = new System.Drawing.Point(28, 294);
+            this.button1.Location = new System.Drawing.Point(28, 450);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(400, 47);
+            this.button1.Size = new System.Drawing.Size(886, 70);
             this.button1.TabIndex = 8;
             this.button1.Text = "DOWNLOAD";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // labelTitle
             // 
             this.labelTitle.AutoSize = true;
-            this.labelTitle.Font = new System.Drawing.Font("Stencil", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTitle.Location = new System.Drawing.Point(157, 64);
+            this.labelTitle.Font = new System.Drawing.Font("Stencil", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTitle.Location = new System.Drawing.Point(340, 77);
             this.labelTitle.Name = "labelTitle";
-            this.labelTitle.Size = new System.Drawing.Size(164, 38);
+            this.labelTitle.Size = new System.Drawing.Size(301, 71);
             this.labelTitle.TabIndex = 19;
             this.labelTitle.Text = "LAPORAN";
             // 
@@ -135,11 +137,12 @@
             this.Controls.Add(this.labelBulan);
             this.Controls.Add(this.cmbBulan);
             this.Controls.Add(this.labelSemester);
-            this.Controls.Add(this.cmbSemster);
+            this.Controls.Add(this.cmbSemester);
             this.Controls.Add(this.btnKembali);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "reportPage";
             this.Text = "ReportPage";
+            this.Load += new System.EventHandler(this.reportPage_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -148,7 +151,7 @@
         #endregion
 
         private System.Windows.Forms.Button btnKembali;
-        private System.Windows.Forms.ComboBox cmbSemster;
+        private System.Windows.Forms.ComboBox cmbSemester;
         private System.Windows.Forms.Label labelSemester;
         private System.Windows.Forms.Label labelBulan;
         private System.Windows.Forms.ComboBox cmbBulan;

@@ -43,7 +43,7 @@
             // kelolaBarang
             // 
             this.kelolaBarang.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.kelolaBarang.Location = new System.Drawing.Point(134, 150);
+            this.kelolaBarang.Location = new System.Drawing.Point(76, 131);
             this.kelolaBarang.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.kelolaBarang.Name = "kelolaBarang";
             this.kelolaBarang.Size = new System.Drawing.Size(180, 50);
@@ -55,7 +55,7 @@
             // permintaanBarang
             // 
             this.permintaanBarang.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.permintaanBarang.Location = new System.Drawing.Point(134, 274);
+            this.permintaanBarang.Location = new System.Drawing.Point(76, 255);
             this.permintaanBarang.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.permintaanBarang.Name = "permintaanBarang";
             this.permintaanBarang.Size = new System.Drawing.Size(180, 50);
@@ -67,7 +67,7 @@
             // labelKaryawan
             // 
             this.labelKaryawan.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelKaryawan.Location = new System.Drawing.Point(344, 150);
+            this.labelKaryawan.Location = new System.Drawing.Point(286, 131);
             this.labelKaryawan.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelKaryawan.Name = "labelKaryawan";
             this.labelKaryawan.Size = new System.Drawing.Size(180, 50);
@@ -79,7 +79,7 @@
             // maintennce
             // 
             this.maintennce.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.maintennce.Location = new System.Drawing.Point(134, 213);
+            this.maintennce.Location = new System.Drawing.Point(76, 194);
             this.maintennce.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.maintennce.Name = "maintennce";
             this.maintennce.Size = new System.Drawing.Size(180, 50);
@@ -91,7 +91,7 @@
             // report
             // 
             this.report.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.report.Location = new System.Drawing.Point(344, 274);
+            this.report.Location = new System.Drawing.Point(286, 255);
             this.report.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.report.Name = "report";
             this.report.Size = new System.Drawing.Size(180, 50);
@@ -104,16 +104,16 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Stencil", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(54, 31);
+            this.label1.Location = new System.Drawing.Point(80, 33);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(609, 57);
+            this.label1.Size = new System.Drawing.Size(508, 47);
             this.label1.TabIndex = 5;
             this.label1.Text = "SELAMAT DATANG ADMIN";
             // 
             // btnNavigasiSemester
             // 
             this.btnNavigasiSemester.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNavigasiSemester.Location = new System.Drawing.Point(344, 213);
+            this.btnNavigasiSemester.Location = new System.Drawing.Point(286, 194);
             this.btnNavigasiSemester.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnNavigasiSemester.Name = "btnNavigasiSemester";
             this.btnNavigasiSemester.Size = new System.Drawing.Size(180, 50);
@@ -125,7 +125,7 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(530, 150);
+            this.button1.Location = new System.Drawing.Point(472, 131);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(133, 174);
