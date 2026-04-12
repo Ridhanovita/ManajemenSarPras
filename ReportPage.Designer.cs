@@ -53,15 +53,15 @@
             // cmbSemester
             // 
             this.cmbSemester.FormattingEnabled = true;
-            this.cmbSemester.Location = new System.Drawing.Point(164, 183);
+            this.cmbSemester.Location = new System.Drawing.Point(163, 239);
             this.cmbSemester.Name = "cmbSemester";
-            this.cmbSemester.Size = new System.Drawing.Size(264, 28);
+            this.cmbSemester.Size = new System.Drawing.Size(751, 28);
             this.cmbSemester.TabIndex = 1;
             // 
             // labelSemester
             // 
             this.labelSemester.AutoSize = true;
-            this.labelSemester.Location = new System.Drawing.Point(24, 186);
+            this.labelSemester.Location = new System.Drawing.Point(23, 242);
             this.labelSemester.Name = "labelSemester";
             this.labelSemester.Size = new System.Drawing.Size(98, 20);
             this.labelSemester.TabIndex = 3;
@@ -70,7 +70,7 @@
             // labelBulan
             // 
             this.labelBulan.AutoSize = true;
-            this.labelBulan.Location = new System.Drawing.Point(24, 235);
+            this.labelBulan.Location = new System.Drawing.Point(23, 291);
             this.labelBulan.Name = "labelBulan";
             this.labelBulan.Size = new System.Drawing.Size(63, 20);
             this.labelBulan.TabIndex = 5;
@@ -79,16 +79,15 @@
             // cmbBulan
             // 
             this.cmbBulan.FormattingEnabled = true;
-            this.cmbBulan.Location = new System.Drawing.Point(164, 232);
+            this.cmbBulan.Location = new System.Drawing.Point(163, 288);
             this.cmbBulan.Name = "cmbBulan";
-            this.cmbBulan.Size = new System.Drawing.Size(264, 28);
+            this.cmbBulan.Size = new System.Drawing.Size(751, 28);
             this.cmbBulan.TabIndex = 4;
-            this.cmbBulan.SelectedIndexChanged += new System.EventHandler(this.cmbTipe_SelectedIndexChanged);
             // 
             // labelTipe
             // 
             this.labelTipe.AutoSize = true;
-            this.labelTipe.Location = new System.Drawing.Point(24, 136);
+            this.labelTipe.Location = new System.Drawing.Point(23, 192);
             this.labelTipe.Name = "labelTipe";
             this.labelTipe.Size = new System.Drawing.Size(44, 20);
             this.labelTipe.TabIndex = 7;
@@ -97,30 +96,32 @@
             // cmbTipe
             // 
             this.cmbTipe.FormattingEnabled = true;
-            this.cmbTipe.Location = new System.Drawing.Point(164, 133);
+            this.cmbTipe.Location = new System.Drawing.Point(163, 189);
             this.cmbTipe.Name = "cmbTipe";
-            this.cmbTipe.Size = new System.Drawing.Size(264, 28);
+            this.cmbTipe.Size = new System.Drawing.Size(751, 28);
             this.cmbTipe.TabIndex = 6;
+            this.cmbTipe.SelectedIndexChanged += new System.EventHandler(this.cmbTipe_SelectedIndexChanged);
             // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.Lime;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button1.Location = new System.Drawing.Point(28, 294);
+            this.button1.Location = new System.Drawing.Point(28, 450);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(400, 47);
+            this.button1.Size = new System.Drawing.Size(886, 70);
             this.button1.TabIndex = 8;
             this.button1.Text = "DOWNLOAD";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // labelTitle
             // 
             this.labelTitle.AutoSize = true;
-            this.labelTitle.Font = new System.Drawing.Font("Stencil", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTitle.Location = new System.Drawing.Point(157, 64);
+            this.labelTitle.Font = new System.Drawing.Font("Stencil", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTitle.Location = new System.Drawing.Point(340, 77);
             this.labelTitle.Name = "labelTitle";
-            this.labelTitle.Size = new System.Drawing.Size(140, 32);
+            this.labelTitle.Size = new System.Drawing.Size(301, 71);
             this.labelTitle.TabIndex = 19;
             this.labelTitle.Text = "LAPORAN";
             // 
@@ -141,7 +142,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "reportPage";
             this.Text = "ReportPage";
-            this.Load += new System.EventHandler(this.FrmReport_Load);
+            this.Load += new System.EventHandler(this.reportPage_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
