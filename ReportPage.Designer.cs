@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.btnKembali = new System.Windows.Forms.Button();
-            this.cmbSemster = new System.Windows.Forms.ComboBox();
+            this.cmbSemester = new System.Windows.Forms.ComboBox();
             this.labelSemester = new System.Windows.Forms.Label();
             this.labelBulan = new System.Windows.Forms.Label();
             this.cmbBulan = new System.Windows.Forms.ComboBox();
@@ -50,13 +50,13 @@
             this.btnKembali.UseVisualStyleBackColor = true;
             this.btnKembali.Click += new System.EventHandler(this.btnKembali_Click);
             // 
-            // cmbSemster
+            // cmbSemester
             // 
-            this.cmbSemster.FormattingEnabled = true;
-            this.cmbSemster.Location = new System.Drawing.Point(164, 183);
-            this.cmbSemster.Name = "cmbSemster";
-            this.cmbSemster.Size = new System.Drawing.Size(264, 28);
-            this.cmbSemster.TabIndex = 1;
+            this.cmbSemester.FormattingEnabled = true;
+            this.cmbSemester.Location = new System.Drawing.Point(164, 183);
+            this.cmbSemester.Name = "cmbSemester";
+            this.cmbSemester.Size = new System.Drawing.Size(264, 28);
+            this.cmbSemester.TabIndex = 1;
             // 
             // labelSemester
             // 
@@ -83,6 +83,7 @@
             this.cmbBulan.Name = "cmbBulan";
             this.cmbBulan.Size = new System.Drawing.Size(264, 28);
             this.cmbBulan.TabIndex = 4;
+            this.cmbBulan.SelectedIndexChanged += new System.EventHandler(this.cmbTipe_SelectedIndexChanged);
             // 
             // labelTipe
             // 
@@ -119,7 +120,7 @@
             this.labelTitle.Font = new System.Drawing.Font("Stencil", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTitle.Location = new System.Drawing.Point(157, 64);
             this.labelTitle.Name = "labelTitle";
-            this.labelTitle.Size = new System.Drawing.Size(164, 38);
+            this.labelTitle.Size = new System.Drawing.Size(140, 32);
             this.labelTitle.TabIndex = 19;
             this.labelTitle.Text = "LAPORAN";
             // 
@@ -135,11 +136,12 @@
             this.Controls.Add(this.labelBulan);
             this.Controls.Add(this.cmbBulan);
             this.Controls.Add(this.labelSemester);
-            this.Controls.Add(this.cmbSemster);
+            this.Controls.Add(this.cmbSemester);
             this.Controls.Add(this.btnKembali);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "reportPage";
             this.Text = "ReportPage";
+            this.Load += new System.EventHandler(this.FrmReport_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -148,7 +150,7 @@
         #endregion
 
         private System.Windows.Forms.Button btnKembali;
-        private System.Windows.Forms.ComboBox cmbSemster;
+        private System.Windows.Forms.ComboBox cmbSemester;
         private System.Windows.Forms.Label labelSemester;
         private System.Windows.Forms.Label labelBulan;
         private System.Windows.Forms.ComboBox cmbBulan;
