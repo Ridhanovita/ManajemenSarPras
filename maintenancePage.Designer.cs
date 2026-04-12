@@ -33,9 +33,10 @@
             // 
             // btnKembali
             // 
-            this.btnKembali.Location = new System.Drawing.Point(45, 380);
+            this.btnKembali.Location = new System.Drawing.Point(51, 475);
+            this.btnKembali.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnKembali.Name = "btnKembali";
-            this.btnKembali.Size = new System.Drawing.Size(109, 42);
+            this.btnKembali.Size = new System.Drawing.Size(123, 52);
             this.btnKembali.TabIndex = 0;
             this.btnKembali.Text = "Kembali";
             this.btnKembali.UseVisualStyleBackColor = true;
@@ -43,10 +44,11 @@
             // 
             // maintenancePage
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(939, 563);
             this.Controls.Add(this.btnKembali);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "maintenancePage";
             this.Text = "mntenncePage";
             this.ResumeLayout(false);

@@ -14,6 +14,7 @@ namespace ManajemenSarPras
 {
     public partial class dashboardPage: Form
     {
+        
         public dashboardPage()
         {
             InitializeComponent();

@@ -61,7 +61,7 @@
             this.labelTitle.Font = new System.Drawing.Font("Stencil", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTitle.Location = new System.Drawing.Point(313, 58);
             this.labelTitle.Name = "labelTitle";
-            this.labelTitle.Size = new System.Drawing.Size(389, 32);
+            this.labelTitle.Size = new System.Drawing.Size(455, 38);
             this.labelTitle.TabIndex = 20;
             this.labelTitle.Text = "PENGELOLAHAN KARYAWAN";
             // 
@@ -141,7 +141,7 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(449, 142);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(91, 36);
+            this.label1.Size = new System.Drawing.Size(113, 44);
             this.label1.TabIndex = 30;
             this.label1.Text = "CARI \r\nKARYAWAN";
             // 
@@ -188,7 +188,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1107, 586);
+            this.ClientSize = new System.Drawing.Size(939, 563);
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button3);
