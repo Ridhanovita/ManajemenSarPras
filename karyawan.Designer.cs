@@ -38,11 +38,9 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnCariKaryawan = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnTambah = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -63,7 +61,7 @@
             this.labelTitle.Font = new System.Drawing.Font("Stencil", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTitle.Location = new System.Drawing.Point(313, 58);
             this.labelTitle.Name = "labelTitle";
-            this.labelTitle.Size = new System.Drawing.Size(455, 38);
+            this.labelTitle.Size = new System.Drawing.Size(389, 32);
             this.labelTitle.TabIndex = 20;
             this.labelTitle.Text = "PENGELOLAHAN KARYAWAN";
             // 
@@ -116,21 +114,26 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(453, 210);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 28;
             this.dataGridView1.Size = new System.Drawing.Size(624, 332);
             this.dataGridView1.TabIndex = 28;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // richTextBox1
             // 
             this.richTextBox1.Location = new System.Drawing.Point(568, 139);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(379, 56);
+            this.richTextBox1.Size = new System.Drawing.Size(509, 56);
             this.richTextBox1.TabIndex = 31;
             this.richTextBox1.Text = "";
+            this.richTextBox1.TextChanged += new System.EventHandler(this.txtCari_TextChanged);
             // 
             // label1
             // 
@@ -138,31 +141,22 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(449, 142);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(113, 44);
+            this.label1.Size = new System.Drawing.Size(91, 36);
             this.label1.TabIndex = 30;
             this.label1.Text = "CARI \r\nKARYAWAN";
             // 
-            // btnCariKaryawan
+            // btnTambah
             // 
-            this.btnCariKaryawan.Location = new System.Drawing.Point(953, 139);
-            this.btnCariKaryawan.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnCariKaryawan.Name = "btnCariKaryawan";
-            this.btnCariKaryawan.Size = new System.Drawing.Size(124, 56);
-            this.btnCariKaryawan.TabIndex = 29;
-            this.btnCariKaryawan.Text = "CARI";
-            this.btnCariKaryawan.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(64, 343);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(174, 56);
-            this.button1.TabIndex = 25;
-            this.button1.Text = "TAMBAH";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnTambah.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnTambah.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTambah.Location = new System.Drawing.Point(64, 343);
+            this.btnTambah.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnTambah.Name = "btnTambah";
+            this.btnTambah.Size = new System.Drawing.Size(174, 56);
+            this.btnTambah.TabIndex = 25;
+            this.btnTambah.Text = "TAMBAH";
+            this.btnTambah.UseVisualStyleBackColor = false;
+            this.btnTambah.Click += new System.EventHandler(this.btnTambah_Click);
             // 
             // button2
             // 
@@ -174,6 +168,7 @@
             this.button2.TabIndex = 26;
             this.button2.Text = "UPDATE";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // button3
             // 
@@ -187,17 +182,7 @@
             this.button3.TabIndex = 27;
             this.button3.Text = "HAPUS";
             this.button3.UseVisualStyleBackColor = false;
-            // 
-            // button4
-            // 
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(953, 139);
-            this.button4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(124, 56);
-            this.button4.TabIndex = 29;
-            this.button4.Text = "CARI";
-            this.button4.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // karyawan
             // 
@@ -206,13 +191,11 @@
             this.ClientSize = new System.Drawing.Size(1107, 586);
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.btnCariKaryawan);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.btnDeleteKaryawan);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnTambah);
             this.Controls.Add(this.btnUpdateKaryawan);
             this.Controls.Add(this.btnTambahKaryawan);
             this.Controls.Add(this.richTextBox3);
@@ -222,6 +205,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "karyawan";
             this.Text = "CekRutin";
+            this.Load += new System.EventHandler(this.karyawan_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -240,10 +224,8 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnCariKaryawan;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnTambah;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
     }
 }

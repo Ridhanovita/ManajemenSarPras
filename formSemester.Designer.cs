@@ -139,7 +139,6 @@
             this.labelTitle.Size = new System.Drawing.Size(377, 32);
             this.labelTitle.TabIndex = 33;
             this.labelTitle.Text = "PENGELOLAHAN SEMESTER";
-            this.labelTitle.Click += new System.EventHandler(this.labelTitle_Click);
             // 
             // btnKembali
             // 

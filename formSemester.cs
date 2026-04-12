@@ -19,10 +19,6 @@ namespace ManajemenSarPras
             InitializeComponent();
         }
 
-        private void labelTitle_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void btnKembali_Click(object sender, EventArgs e)
         {
