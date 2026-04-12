@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
+using SatprasDesktopApp.Config;
 
 namespace ManajemenSarPras
 {
@@ -33,7 +35,7 @@ namespace ManajemenSarPras
 
         private void pengecekanRutin_Click(object sender, EventArgs e)
         {
-            pengecekanRutin cekRutin = new pengecekanRutin();
+            karyawan cekRutin = new karyawan();
             cekRutin.Show();
             this.Hide();
         }
@@ -53,6 +55,29 @@ namespace ManajemenSarPras
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnNavigasiSemester_Click(object sender, EventArgs e)
+        {
+            formSemester semester = new formSemester();
+            semester.Show();
+            this.Hide();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            using (SqlConnection conn = DatabaseConfig.GetConnection())
+            {
+                if (conn != null && conn.State == ConnectionState.Open)
+                {
+                    MessageBox.Show("Koneksi berhasil!");
+                }
+            }
+        }
+
+        private void dashboardPage_Load(object sender, EventArgs e)
         {
 
         }

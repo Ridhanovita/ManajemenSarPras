@@ -44,7 +44,7 @@
             this.btnKembali.Location = new System.Drawing.Point(12, 13);
             this.btnKembali.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnKembali.Name = "btnKembali";
-            this.btnKembali.Size = new System.Drawing.Size(118, 61);
+            this.btnKembali.Size = new System.Drawing.Size(110, 41);
             this.btnKembali.TabIndex = 0;
             this.btnKembali.Text = "Kembali";
             this.btnKembali.UseVisualStyleBackColor = true;
@@ -108,7 +108,7 @@
             this.button1.ForeColor = System.Drawing.SystemColors.ControlText;
             this.button1.Location = new System.Drawing.Point(28, 294);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(400, 38);
+            this.button1.Size = new System.Drawing.Size(400, 47);
             this.button1.TabIndex = 8;
             this.button1.Text = "DOWNLOAD";
             this.button1.UseVisualStyleBackColor = false;

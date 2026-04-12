@@ -34,12 +34,14 @@
             this.maintennce = new System.Windows.Forms.Button();
             this.report = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnNavigasiSemester = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // kelolaBarang
             // 
             this.kelolaBarang.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.kelolaBarang.Location = new System.Drawing.Point(115, 179);
+            this.kelolaBarang.Location = new System.Drawing.Point(134, 150);
             this.kelolaBarang.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.kelolaBarang.Name = "kelolaBarang";
             this.kelolaBarang.Size = new System.Drawing.Size(180, 50);
@@ -51,7 +53,7 @@
             // permintaanBarang
             // 
             this.permintaanBarang.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.permintaanBarang.Location = new System.Drawing.Point(115, 303);
+            this.permintaanBarang.Location = new System.Drawing.Point(134, 274);
             this.permintaanBarang.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.permintaanBarang.Name = "permintaanBarang";
             this.permintaanBarang.Size = new System.Drawing.Size(180, 50);
@@ -63,7 +65,7 @@
             // labelKaryawan
             // 
             this.labelKaryawan.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelKaryawan.Location = new System.Drawing.Point(325, 179);
+            this.labelKaryawan.Location = new System.Drawing.Point(344, 150);
             this.labelKaryawan.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelKaryawan.Name = "labelKaryawan";
             this.labelKaryawan.Size = new System.Drawing.Size(180, 50);
@@ -75,7 +77,7 @@
             // maintennce
             // 
             this.maintennce.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.maintennce.Location = new System.Drawing.Point(115, 242);
+            this.maintennce.Location = new System.Drawing.Point(134, 213);
             this.maintennce.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.maintennce.Name = "maintennce";
             this.maintennce.Size = new System.Drawing.Size(180, 50);
@@ -87,7 +89,7 @@
             // report
             // 
             this.report.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.report.Location = new System.Drawing.Point(325, 242);
+            this.report.Location = new System.Drawing.Point(344, 274);
             this.report.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.report.Name = "report";
             this.report.Size = new System.Drawing.Size(180, 50);
@@ -106,11 +108,37 @@
             this.label1.TabIndex = 5;
             this.label1.Text = "SELAMAT DATANG ADMIN";
             // 
+            // btnNavigasiSemester
+            // 
+            this.btnNavigasiSemester.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNavigasiSemester.Location = new System.Drawing.Point(344, 213);
+            this.btnNavigasiSemester.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnNavigasiSemester.Name = "btnNavigasiSemester";
+            this.btnNavigasiSemester.Size = new System.Drawing.Size(180, 50);
+            this.btnNavigasiSemester.TabIndex = 6;
+            this.btnNavigasiSemester.Text = "Semester";
+            this.btnNavigasiSemester.UseVisualStyleBackColor = true;
+            this.btnNavigasiSemester.Click += new System.EventHandler(this.btnNavigasiSemester_Click);
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(530, 150);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(133, 174);
+            this.button1.TabIndex = 7;
+            this.button1.Text = "Karyawan";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // dashboardPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(717, 441);
+            this.ClientSize = new System.Drawing.Size(698, 380);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnNavigasiSemester);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.report);
             this.Controls.Add(this.maintennce);
@@ -120,6 +148,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "dashboardPage";
             this.Text = "dashboardPage";
+            this.Load += new System.EventHandler(this.dashboardPage_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -133,6 +162,8 @@
         private System.Windows.Forms.Button maintennce;
         private System.Windows.Forms.Button report;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnNavigasiSemester;
+        private System.Windows.Forms.Button button1;
     }
 }
 

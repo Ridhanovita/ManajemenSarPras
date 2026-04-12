@@ -34,6 +34,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -52,11 +53,17 @@
     <Compile Include="FormDetailBarang.Designer.cs">
       <DependentUpon>FormDetailBarang.cs</DependentUpon>
     </Compile>
-    <Compile Include="pengecekanRutin.cs">
+    <Compile Include="formSemester.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="pengecekanRutin.Designer.cs">
-      <DependentUpon>pengecekanRutin.cs</DependentUpon>
+    <Compile Include="formSemester.Designer.cs">
+      <DependentUpon>formSemester.cs</DependentUpon>
+    </Compile>
+    <Compile Include="karyawan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="karyawan.Designer.cs">
+      <DependentUpon>karyawan.cs</DependentUpon>
     </Compile>
     <Compile Include="dashboardPage.cs">
       <SubType>Form</SubType>
@@ -90,11 +97,15 @@
     <Compile Include="reportPage.Designer.cs">
       <DependentUpon>reportPage.cs</DependentUpon>
     </Compile>
+    <Compile Include="utils\databaseConnection.cs" />
     <EmbeddedResource Include="dashboardPage.resx">
       <DependentUpon>dashboardPage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormDetailBarang.resx">
       <DependentUpon>FormDetailBarang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formSemester.resx">
+      <DependentUpon>formSemester.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="kelolaBarang.resx">
       <DependentUpon>kelolaBarang.cs</DependentUpon>
@@ -102,8 +113,8 @@
     <EmbeddedResource Include="maintenancePage.resx">
       <DependentUpon>maintenancePage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="pengecekanRutin.resx">
-      <DependentUpon>pengecekanRutin.cs</DependentUpon>
+    <EmbeddedResource Include="karyawan.resx">
+      <DependentUpon>karyawan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="permintaanBarang.resx">
       <DependentUpon>permintaanBarang.cs</DependentUpon>
@@ -133,5 +144,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
