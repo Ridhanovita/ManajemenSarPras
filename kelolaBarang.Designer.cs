@@ -78,7 +78,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Stencil", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(433, 14);
+            this.label1.Location = new System.Drawing.Point(263, 36);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(381, 38);
             this.label1.TabIndex = 2;
@@ -112,14 +112,14 @@
             // 
             this.txtNamaBarang.Location = new System.Drawing.Point(184, 147);
             this.txtNamaBarang.Name = "txtNamaBarang";
-            this.txtNamaBarang.Size = new System.Drawing.Size(289, 26);
+            this.txtNamaBarang.Size = new System.Drawing.Size(196, 26);
             this.txtNamaBarang.TabIndex = 6;
             // 
             // txtIdBarang
             // 
             this.txtIdBarang.Location = new System.Drawing.Point(184, 100);
             this.txtIdBarang.Name = "txtIdBarang";
-            this.txtIdBarang.Size = new System.Drawing.Size(289, 26);
+            this.txtIdBarang.Size = new System.Drawing.Size(196, 26);
             this.txtIdBarang.TabIndex = 8;
             this.txtIdBarang.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
@@ -140,7 +140,7 @@
             this.btnTambahBarang.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnTambahBarang.Location = new System.Drawing.Point(24, 326);
             this.btnTambahBarang.Name = "btnTambahBarang";
-            this.btnTambahBarang.Size = new System.Drawing.Size(136, 34);
+            this.btnTambahBarang.Size = new System.Drawing.Size(104, 34);
             this.btnTambahBarang.TabIndex = 9;
             this.btnTambahBarang.Text = "Tambah Barang";
             this.btnTambahBarang.UseVisualStyleBackColor = false;
@@ -148,9 +148,9 @@
             // btnUpdateBarang
             // 
             this.btnUpdateBarang.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdateBarang.Location = new System.Drawing.Point(337, 326);
+            this.btnUpdateBarang.Location = new System.Drawing.Point(309, 326);
             this.btnUpdateBarang.Name = "btnUpdateBarang";
-            this.btnUpdateBarang.Size = new System.Drawing.Size(136, 34);
+            this.btnUpdateBarang.Size = new System.Drawing.Size(90, 34);
             this.btnUpdateBarang.TabIndex = 10;
             this.btnUpdateBarang.Text = "Update Barang";
             this.btnUpdateBarang.UseVisualStyleBackColor = true;
@@ -160,7 +160,7 @@
             this.button2.BackColor = System.Drawing.Color.Red;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button2.Location = new System.Drawing.Point(184, 326);
+            this.button2.Location = new System.Drawing.Point(146, 326);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(136, 34);
             this.button2.TabIndex = 11;
@@ -195,7 +195,7 @@
             "Tidak Perlu Pengecekkan Rutin"});
             this.cmbTipeBarang.Location = new System.Drawing.Point(184, 206);
             this.cmbTipeBarang.Name = "cmbTipeBarang";
-            this.cmbTipeBarang.Size = new System.Drawing.Size(289, 28);
+            this.cmbTipeBarang.Size = new System.Drawing.Size(196, 28);
             this.cmbTipeBarang.TabIndex = 14;
             // 
             // labelJumlahBarang
@@ -211,7 +211,7 @@
             // 
             this.txtJumlahBarang.Location = new System.Drawing.Point(184, 268);
             this.txtJumlahBarang.Name = "txtJumlahBarang";
-            this.txtJumlahBarang.Size = new System.Drawing.Size(289, 26);
+            this.txtJumlahBarang.Size = new System.Drawing.Size(196, 26);
             this.txtJumlahBarang.TabIndex = 16;
             // 
             // labelCariBarang
