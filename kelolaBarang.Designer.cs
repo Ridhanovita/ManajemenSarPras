@@ -67,12 +67,13 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(527, 153);
+            this.dataGridView1.Location = new System.Drawing.Point(421, 153);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(726, 320);
+            this.dataGridView1.Size = new System.Drawing.Size(506, 385);
             this.dataGridView1.TabIndex = 1;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // label1
             // 
@@ -87,7 +88,7 @@
             // labelNamaBarang
             // 
             this.labelNamaBarang.AutoSize = true;
-            this.labelNamaBarang.Location = new System.Drawing.Point(20, 150);
+            this.labelNamaBarang.Location = new System.Drawing.Point(29, 200);
             this.labelNamaBarang.Name = "labelNamaBarang";
             this.labelNamaBarang.Size = new System.Drawing.Size(128, 20);
             this.labelNamaBarang.TabIndex = 3;
@@ -97,10 +98,11 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(17, 153);
+            this.label3.Location = new System.Drawing.Point(26, 203);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(0, 20);
             this.label3.TabIndex = 4;
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // contextMenuStrip1
             // 
@@ -110,14 +112,15 @@
             // 
             // txtNamaBarang
             // 
-            this.txtNamaBarang.Location = new System.Drawing.Point(184, 147);
+            this.txtNamaBarang.Location = new System.Drawing.Point(193, 197);
             this.txtNamaBarang.Name = "txtNamaBarang";
             this.txtNamaBarang.Size = new System.Drawing.Size(196, 26);
             this.txtNamaBarang.TabIndex = 6;
+            this.txtNamaBarang.TextChanged += new System.EventHandler(this.txtNamaBarang_TextChanged);
             // 
             // txtIdBarang
             // 
-            this.txtIdBarang.Location = new System.Drawing.Point(184, 100);
+            this.txtIdBarang.Location = new System.Drawing.Point(193, 150);
             this.txtIdBarang.Name = "txtIdBarang";
             this.txtIdBarang.Size = new System.Drawing.Size(196, 26);
             this.txtIdBarang.TabIndex = 8;
@@ -126,7 +129,7 @@
             // labelIdBarang
             // 
             this.labelIdBarang.AutoSize = true;
-            this.labelIdBarang.Location = new System.Drawing.Point(20, 103);
+            this.labelIdBarang.Location = new System.Drawing.Point(29, 153);
             this.labelIdBarang.Name = "labelIdBarang";
             this.labelIdBarang.Size = new System.Drawing.Size(99, 20);
             this.labelIdBarang.TabIndex = 7;
@@ -138,49 +141,53 @@
             this.btnTambahBarang.BackColor = System.Drawing.Color.Lime;
             this.btnTambahBarang.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTambahBarang.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnTambahBarang.Location = new System.Drawing.Point(24, 326);
+            this.btnTambahBarang.Location = new System.Drawing.Point(33, 377);
             this.btnTambahBarang.Name = "btnTambahBarang";
-            this.btnTambahBarang.Size = new System.Drawing.Size(104, 34);
+            this.btnTambahBarang.Size = new System.Drawing.Size(104, 68);
             this.btnTambahBarang.TabIndex = 9;
             this.btnTambahBarang.Text = "Tambah Barang";
             this.btnTambahBarang.UseVisualStyleBackColor = false;
+            this.btnTambahBarang.Click += new System.EventHandler(this.btnTambahBarang_Click);
             // 
             // btnUpdateBarang
             // 
             this.btnUpdateBarang.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdateBarang.Location = new System.Drawing.Point(309, 326);
+            this.btnUpdateBarang.Location = new System.Drawing.Point(285, 377);
             this.btnUpdateBarang.Name = "btnUpdateBarang";
-            this.btnUpdateBarang.Size = new System.Drawing.Size(90, 34);
+            this.btnUpdateBarang.Size = new System.Drawing.Size(104, 68);
             this.btnUpdateBarang.TabIndex = 10;
             this.btnUpdateBarang.Text = "Update Barang";
             this.btnUpdateBarang.UseVisualStyleBackColor = true;
+            this.btnUpdateBarang.Click += new System.EventHandler(this.btnUpdateBarang_Click);
             // 
             // button2
             // 
             this.button2.BackColor = System.Drawing.Color.Red;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button2.Location = new System.Drawing.Point(146, 326);
+            this.button2.Location = new System.Drawing.Point(159, 377);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(136, 34);
+            this.button2.Size = new System.Drawing.Size(104, 68);
             this.button2.TabIndex = 11;
             this.button2.Text = "Hapus Barang";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(24, 366);
+            this.button3.Location = new System.Drawing.Point(30, 478);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(449, 34);
+            this.button3.Size = new System.Drawing.Size(375, 45);
             this.button3.TabIndex = 12;
             this.button3.Text = "Detail Barang";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // labelTipeBarang
             // 
             this.labelTipeBarang.AutoSize = true;
-            this.labelTipeBarang.Location = new System.Drawing.Point(20, 206);
+            this.labelTipeBarang.Location = new System.Drawing.Point(29, 256);
             this.labelTipeBarang.Name = "labelTipeBarang";
             this.labelTipeBarang.Size = new System.Drawing.Size(117, 20);
             this.labelTipeBarang.TabIndex = 13;
@@ -193,31 +200,34 @@
             this.cmbTipeBarang.Items.AddRange(new object[] {
             "Perlu Pengecekkan Rutin",
             "Tidak Perlu Pengecekkan Rutin"});
-            this.cmbTipeBarang.Location = new System.Drawing.Point(184, 206);
+            this.cmbTipeBarang.Location = new System.Drawing.Point(193, 256);
             this.cmbTipeBarang.Name = "cmbTipeBarang";
             this.cmbTipeBarang.Size = new System.Drawing.Size(196, 28);
             this.cmbTipeBarang.TabIndex = 14;
+            this.cmbTipeBarang.SelectedIndexChanged += new System.EventHandler(this.cmbTipeBarang_SelectedIndexChanged);
             // 
             // labelJumlahBarang
             // 
             this.labelJumlahBarang.AutoSize = true;
-            this.labelJumlahBarang.Location = new System.Drawing.Point(20, 259);
+            this.labelJumlahBarang.Location = new System.Drawing.Point(29, 309);
             this.labelJumlahBarang.Name = "labelJumlahBarang";
             this.labelJumlahBarang.Size = new System.Drawing.Size(151, 40);
             this.labelJumlahBarang.TabIndex = 15;
             this.labelJumlahBarang.Text = "JUMLAH BARANG \r\nNON-CHECK";
+            this.labelJumlahBarang.Click += new System.EventHandler(this.labelJumlahBarang_Click);
             // 
             // txtJumlahBarang
             // 
-            this.txtJumlahBarang.Location = new System.Drawing.Point(184, 268);
+            this.txtJumlahBarang.Location = new System.Drawing.Point(193, 318);
             this.txtJumlahBarang.Name = "txtJumlahBarang";
             this.txtJumlahBarang.Size = new System.Drawing.Size(196, 26);
             this.txtJumlahBarang.TabIndex = 16;
+            this.txtJumlahBarang.TextChanged += new System.EventHandler(this.txtJumlahBarang_TextChanged);
             // 
             // labelCariBarang
             // 
             this.labelCariBarang.AutoSize = true;
-            this.labelCariBarang.Location = new System.Drawing.Point(523, 109);
+            this.labelCariBarang.Location = new System.Drawing.Point(417, 109);
             this.labelCariBarang.Name = "labelCariBarang";
             this.labelCariBarang.Size = new System.Drawing.Size(121, 20);
             this.labelCariBarang.TabIndex = 18;
@@ -235,9 +245,9 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(665, 106);
+            this.textBox1.Location = new System.Drawing.Point(544, 106);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(431, 26);
+            this.textBox1.Size = new System.Drawing.Size(383, 26);
             this.textBox1.TabIndex = 19;
             // 
             // kelolaBarang
@@ -267,6 +277,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "kelolaBarang";
             this.Text = "kelolaBarang";
+            this.Load += new System.EventHandler(this.kelolaBarang_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
