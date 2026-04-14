@@ -1,4 +1,4 @@
-﻿using SatprasDesktopApp.Config; // Pastikan namespace ini sesuai dengan milik Anda
+﻿using SatprasDesktopApp.Config;
 using System;
 using System.Data;
 using System.Data.SqlClient;
@@ -9,9 +9,6 @@ namespace ManajemenSarPras
 {
     public partial class FormDetailBarang : Form
     {
-        // ==========================================================
-        // VARIABEL GLOBAL PENGENDALI STATE
-        // ==========================================================
         private bool isEditMode = false;
         private string originalIdDetail = "";
         private string originalIdBarang = "";
@@ -19,17 +16,11 @@ namespace ManajemenSarPras
         public FormDetailBarang()
         {
             InitializeComponent();
-
-            // HARDCODE EVENT BINDING: Arsitektur anti-error dari UI Designer
             this.Load += new EventHandler(FormDetailBarang_Load);
             this.dgvDetail.CellClick += new DataGridViewCellEventHandler(dgvDetail_CellClick);
             this.txtCari.TextChanged += new EventHandler(txtCari_TextChanged);
             this.cmbGedung.SelectedIndexChanged += new EventHandler(cmbGedung_SelectedIndexChanged);
-
-            // UX Sweeper (Penyapu input fiktif di ComboBox)
             this.cmbBarang.Leave += new EventHandler(cmbBarang_Leave);
-
-            // Binding Tombol Aksi
             this.btnSimpan.Click += new EventHandler(btnSimpan_Click);
             this.btnBatal.Click += new EventHandler(btnBatal_Click);
             this.btnHapus.Click += new EventHandler(btnHapus_Click);
@@ -42,9 +33,6 @@ namespace ManajemenSarPras
             this.Hide();
         }
 
-        // ==========================================================
-        // FASE 1: INISIALISASI & CASCADING DROPDOWN
-        // ==========================================================
         private void FormDetailBarang_Load(object sender, EventArgs e)
         {
             LoadComboBoxBarang();
@@ -60,8 +48,6 @@ namespace ManajemenSarPras
                 using (var conn = DatabaseConfig.GetConnection())
                 {
                     if (conn == null) return;
-
-                    // Hanya memuat Aset Tetap (Pengecekan Rutin)
                     string query = "SELECT idBarang, namaBarang FROM master.barang WHERE tipeBarang = 1";
                     using (var da = new SqlDataAdapter(query, conn))
                     {
@@ -77,14 +63,13 @@ namespace ManajemenSarPras
                         cmbBarang.DisplayMember = "namaBarang";
                         cmbBarang.ValueMember = "idBarang";
 
-                        // INJEKSI SIHIR AUTOCOMPLETE (SEARCHABLE COMBOBOX)
-                        cmbBarang.DropDownStyle = ComboBoxStyle.DropDown; // Mengizinkan user mengetik
+                        cmbBarang.DropDownStyle = ComboBoxStyle.DropDown;
                         cmbBarang.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
                         cmbBarang.AutoCompleteSource = AutoCompleteSource.ListItems;
                     }
                 }
             }
-            catch (Exception ex) { MessageBox.Show("Error Load Barang: " + ex.Message); }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
 
         private void LoadComboBoxGedung()
@@ -111,10 +96,9 @@ namespace ManajemenSarPras
                     }
                 }
             }
-            catch (Exception ex) { MessageBox.Show("Error Load Gedung: " + ex.Message); }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
 
-        // TRIGGER LOKASI: Gedung mengontrol isi Ruangan
         private void cmbGedung_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cmbGedung.SelectedIndex <= 0 || cmbGedung.SelectedValue == null)
@@ -155,19 +139,14 @@ namespace ManajemenSarPras
                     }
                 }
             }
-            catch (Exception ex) { MessageBox.Show("Error Load Ruangan: " + ex.Message); }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
 
-        // ==========================================================
-        // FASE 2: GRID, STATE MANAGEMENT & UX SWEEPER
-        // ==========================================================
-
-        // UX Sweeper: Cegah input fiktif dari Autocomplete ComboBox
         private void cmbBarang_Leave(object sender, EventArgs e)
         {
             if (cmbBarang.SelectedIndex == -1 && !string.IsNullOrWhiteSpace(cmbBarang.Text))
             {
-                MessageBox.Show("Aset tidak ditemukan di dalam Katalog Master. Silakan ketik nama yang valid atau pilih dari daftar.", "Filter Keamanan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Aset tidak ditemukan di dalam Katalog Master.", "Validasi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 cmbBarang.SelectedIndex = 0;
                 cmbBarang.Focus();
             }
@@ -185,19 +164,20 @@ namespace ManajemenSarPras
                         SELECT 
                             db.idDetailBarang AS [ID Detail],
                             b.namaBarang AS [Nama Aset],
-                            b.merk AS [Merk],
+                            m.namaMerk AS [Merk],
                             db.spesifikasi AS [Spesifikasi],
                             g.namaGedung AS [Gedung],
                             r.namaRuangan AS [Lokasi Ruangan],
-                            b.idBarang, g.idGedung, r.idRuangan -- Hidden Columns
+                            b.idBarang, g.idGedung, r.idRuangan
                         FROM [transaction].detailBarang db
-                        JOIN [master].barang b ON db.idBarang = b.idBarang
-                        JOIN [master].ruangan r ON db.idRuangan = r.idRuangan
-                        JOIN [master].gedung g ON r.idGedung = g.idGedung";
+                        LEFT JOIN [master].barang b ON db.idBarang = b.idBarang
+                        LEFT JOIN [master].merk m ON b.idMerk = m.idMerk 
+                        LEFT JOIN [master].ruangan r ON db.idRuangan = r.idRuangan
+                        LEFT JOIN [master].gedung g ON r.idGedung = g.idGedung";
 
                     if (!string.IsNullOrEmpty(keyword))
                     {
-                        query += " WHERE b.namaBarang LIKE @kw OR db.idDetailBarang LIKE @kw OR db.spesifikasi LIKE @kw OR b.merk LIKE @kw";
+                        query += " WHERE b.namaBarang LIKE @kw OR db.idDetailBarang LIKE @kw OR db.spesifikasi LIKE @kw OR m.namaMerk LIKE @kw";
                     }
 
                     using (var cmd = new SqlCommand(query, conn))
@@ -208,9 +188,12 @@ namespace ManajemenSarPras
                         {
                             DataTable dt = new DataTable();
                             da.Fill(dt);
+
+                            dgvDetail.DataSource = null;
+                            dgvDetail.Columns.Clear();
+                            dgvDetail.AutoGenerateColumns = true;
                             dgvDetail.DataSource = dt;
 
-                            // Sembunyikan kolom sistem agar rapi
                             if (dgvDetail.Columns["idBarang"] != null) dgvDetail.Columns["idBarang"].Visible = false;
                             if (dgvDetail.Columns["idGedung"] != null) dgvDetail.Columns["idGedung"].Visible = false;
                             if (dgvDetail.Columns["idRuangan"] != null) dgvDetail.Columns["idRuangan"].Visible = false;
@@ -218,7 +201,7 @@ namespace ManajemenSarPras
                     }
                 }
             }
-            catch (Exception ex) { MessageBox.Show("Error Load Grid: " + ex.Message); }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
 
         private void ResetForm()
@@ -228,12 +211,11 @@ namespace ManajemenSarPras
 
             txtIdDetail.ReadOnly = false;
 
-            // BUKA GEMBOK ASET (Mode Tambah Baru)
             cmbBarang.Enabled = true;
             if (cmbBarang.Items.Count > 0) cmbBarang.SelectedIndex = 0;
 
             if (cmbGedung.Items.Count > 0) cmbGedung.SelectedIndex = 0;
-            cmbRuangan.Enabled = false; // Akan dibuka otomatis oleh trigger gedung
+            cmbRuangan.Enabled = false;
 
             isEditMode = false;
             originalIdDetail = "";
@@ -272,8 +254,6 @@ namespace ManajemenSarPras
 
                 txtIdDetail.ReadOnly = true;
 
-                // MANUVER ARSITEK: KUNCI NAMA ASET
-                // User tidak boleh menukar identitas aset (misal: AC ditukar jadi Proyektor)
                 cmbBarang.Enabled = false;
 
                 isEditMode = true;
@@ -282,16 +262,12 @@ namespace ManajemenSarPras
             }
         }
 
-        // ==========================================================
-        // FASE 3: MESIN TRANSAKSIONAL (ATOMIC CRUD)
-        // ==========================================================
         private void btnSimpan_Click(object sender, EventArgs e)
         {
-            // Validasi Gatekeeper
             if (string.IsNullOrWhiteSpace(txtIdDetail.Text) || string.IsNullOrWhiteSpace(txtSpesifikasi.Text) ||
                 cmbBarang.SelectedIndex <= 0 || cmbGedung.SelectedIndex <= 0 || cmbRuangan.SelectedIndex <= 0)
             {
-                MessageBox.Show("Lengkapi semua form! Pastikan Aset, Spesifikasi, Gedung, dan Ruangan terisi.", "Validasi Ketat", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Lengkapi semua form!", "Validasi Ketat", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -301,14 +277,12 @@ namespace ManajemenSarPras
                 {
                     if (conn == null) return;
 
-                    // MEMULAI TRANSAKSI KEUANGAN/ASET (Mencegah Stok Bocor)
                     SqlTransaction transaction = conn.BeginTransaction();
 
                     try
                     {
                         if (isEditMode)
                         {
-                            // MODE UPDATE: Hanya memindahkan lokasi & edit spek. Stok master.barang TIDAK BERUBAH.
                             string qUpdate = "UPDATE [transaction].detailBarang SET idRuangan = @ruang, spesifikasi = @spec WHERE idDetailBarang = @idAsli";
                             using (var cmd = new SqlCommand(qUpdate, conn, transaction))
                             {
@@ -320,20 +294,16 @@ namespace ManajemenSarPras
                         }
                         else
                         {
-                            // MODE INSERT: Tambah Detail BARU + Naikkan STOK Master (+1)
-
-                            // 1. Cek Duplikasi ID Detail
                             string qCheck = "SELECT COUNT(1) FROM [transaction].detailBarang WHERE idDetailBarang = @id";
                             using (var cmdCheck = new SqlCommand(qCheck, conn, transaction))
                             {
                                 cmdCheck.Parameters.AddWithValue("@id", txtIdDetail.Text.Trim());
                                 if (Convert.ToInt32(cmdCheck.ExecuteScalar()) > 0)
                                 {
-                                    throw new Exception("ID Detail ini sudah dipakai. Gunakan Kode/ID unik (Misal: SN-001)!");
+                                    throw new Exception("ID Detail sudah terpakai!");
                                 }
                             }
 
-                            // 2. Insert ke tabel detailBarang
                             string qInsert = "INSERT INTO [transaction].detailBarang (idDetailBarang, idBarang, idRuangan, spesifikasi) VALUES (@id, @barang, @ruang, @spec)";
                             using (var cmdIn = new SqlCommand(qInsert, conn, transaction))
                             {
@@ -344,7 +314,6 @@ namespace ManajemenSarPras
                                 cmdIn.ExecuteNonQuery();
                             }
 
-                            // 3. Update stok (Sistem Cerdas Penambahan Stok)
                             string qStock = "UPDATE master.barang SET stok = stok + 1 WHERE idBarang = @barang";
                             using (var cmdStok = new SqlCommand(qStock, conn, transaction))
                             {
@@ -353,29 +322,27 @@ namespace ManajemenSarPras
                             }
                         }
 
-                        // KOMITMEN TRANSAKSI: Semua eksekusi SQL di atas dinyatakan Sah!
                         transaction.Commit();
-                        MessageBox.Show($"Registrasi/Update Aset berhasil diproses secara atomik!", "Operasi Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Proses berhasil!", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                         LoadDataDetail();
                         ResetForm();
                     }
                     catch (Exception ex)
                     {
-                        // JIKA GAGAL DI TENGAH JALAN, KEMBALIKAN SEMUA DATA SEPERTI SEMULA (Rollback)
                         transaction.Rollback();
-                        MessageBox.Show(ex.Message, "Validasi Sistem", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MessageBox.Show(ex.Message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                 }
             }
-            catch (Exception ex) { MessageBox.Show("Database Error: " + ex.Message, "Fatal Error", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+            catch (Exception ex) { MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); }
         }
 
         private void btnHapus_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(originalIdDetail)) return;
 
-            if (MessageBox.Show("Menghapus data ini akan MENGURANGI STOK di Master Barang secara otomatis.\n\nYakin ingin menghapus?", "Konfirmasi Destruktif", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            if (MessageBox.Show("Yakin ingin menghapus?", "Konfirmasi", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
                 try
                 {
@@ -386,7 +353,6 @@ namespace ManajemenSarPras
 
                         try
                         {
-                            // 1. Kurangi stok di master.barang (-1)
                             string qStock = "UPDATE master.barang SET stok = stok - 1 WHERE idBarang = @barang";
                             using (var cmdStok = new SqlCommand(qStock, conn, transaction))
                             {
@@ -394,7 +360,6 @@ namespace ManajemenSarPras
                                 cmdStok.ExecuteNonQuery();
                             }
 
-                            // 2. Hapus data detailBarang
                             string qDel = "DELETE FROM [transaction].detailBarang WHERE idDetailBarang = @id";
                             using (var cmdDel = new SqlCommand(qDel, conn, transaction))
                             {
@@ -403,7 +368,7 @@ namespace ManajemenSarPras
                             }
 
                             transaction.Commit();
-                            MessageBox.Show("Aset fisik berhasil dihapus dan jumlah stok master telah disesuaikan.", "Penghapusan Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            MessageBox.Show("Data terhapus.", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             LoadDataDetail();
                             ResetForm();
                         }
@@ -411,7 +376,7 @@ namespace ManajemenSarPras
                         {
                             transaction.Rollback();
                             if (sqlEx.Number == 547)
-                                MessageBox.Show("OPERASI DITOLAK: Integritas Data!\n\nBarang ini memiliki rekam jejak pada Laporan Maintenance/Pengecekan. Aset yang memiliki sejarah transaksi tidak boleh dihapus.", "Proteksi Database Aktif", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                MessageBox.Show("Aset tidak bisa dihapus.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             else
                                 throw sqlEx;
                         }
@@ -422,7 +387,7 @@ namespace ManajemenSarPras
                         }
                     }
                 }
-                catch (Exception ex) { MessageBox.Show("System Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+                catch (Exception ex) { MessageBox.Show(ex.Message); }
             }
         }
     }
