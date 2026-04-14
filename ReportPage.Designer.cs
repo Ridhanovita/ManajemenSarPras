@@ -119,9 +119,9 @@
             // 
             this.labelTitle.AutoSize = true;
             this.labelTitle.Font = new System.Drawing.Font("Stencil", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTitle.Location = new System.Drawing.Point(340, 77);
+            this.labelTitle.Location = new System.Drawing.Point(299, 67);
             this.labelTitle.Name = "labelTitle";
-            this.labelTitle.Size = new System.Drawing.Size(301, 71);
+            this.labelTitle.Size = new System.Drawing.Size(362, 85);
             this.labelTitle.TabIndex = 19;
             this.labelTitle.Text = "LAPORAN";
             // 
