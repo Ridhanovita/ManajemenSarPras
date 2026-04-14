@@ -106,7 +106,7 @@
             this.label1.Font = new System.Drawing.Font("Stencil", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(165, 113);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(609, 57);
+            this.label1.Size = new System.Drawing.Size(900, 85);
             this.label1.TabIndex = 5;
             this.label1.Text = "SELAMAT DATANG ADMIN";
             // 
@@ -155,7 +155,6 @@
             this.Controls.Add(this.kelolaBarang);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "dashboardPage";
-            this.Text = "dashboardPage";
             this.Load += new System.EventHandler(this.dashboardPage_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
