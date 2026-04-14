@@ -38,6 +38,14 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.stockBarang = new System.Windows.Forms.Button();
+            this.addPeminta = new System.Windows.Forms.Button();
+            this.updatePminjam = new System.Windows.Forms.Button();
+            this.hpsPermintaan = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnKembali
@@ -55,7 +63,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Stencil", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(431, 56);
+            this.label1.Location = new System.Drawing.Point(335, 46);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(366, 38);
             this.label1.TabIndex = 1;
@@ -127,11 +135,78 @@
             this.textBox3.Size = new System.Drawing.Size(274, 26);
             this.textBox3.TabIndex = 9;
             // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(232, 283);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(156, 26);
+            this.textBox4.TabIndex = 10;
+            // 
+            // textBox5
+            // 
+            this.textBox5.Location = new System.Drawing.Point(232, 330);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(156, 26);
+            this.textBox5.TabIndex = 11;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(35, 375);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 62;
+            this.dataGridView1.RowTemplate.Height = 28;
+            this.dataGridView1.Size = new System.Drawing.Size(850, 184);
+            this.dataGridView1.TabIndex = 12;
+            // 
+            // stockBarang
+            // 
+            this.stockBarang.Location = new System.Drawing.Point(729, 108);
+            this.stockBarang.Name = "stockBarang";
+            this.stockBarang.Size = new System.Drawing.Size(144, 54);
+            this.stockBarang.TabIndex = 13;
+            this.stockBarang.Text = "Tampilkan Stock";
+            this.stockBarang.UseVisualStyleBackColor = true;
+            // 
+            // addPeminta
+            // 
+            this.addPeminta.Location = new System.Drawing.Point(729, 168);
+            this.addPeminta.Name = "addPeminta";
+            this.addPeminta.Size = new System.Drawing.Size(144, 54);
+            this.addPeminta.TabIndex = 14;
+            this.addPeminta.Text = "Tambah Permintaan";
+            this.addPeminta.UseVisualStyleBackColor = true;
+            // 
+            // updatePminjam
+            // 
+            this.updatePminjam.Location = new System.Drawing.Point(729, 232);
+            this.updatePminjam.Name = "updatePminjam";
+            this.updatePminjam.Size = new System.Drawing.Size(144, 54);
+            this.updatePminjam.TabIndex = 15;
+            this.updatePminjam.Text = "Update Permintaan";
+            this.updatePminjam.UseVisualStyleBackColor = true;
+            // 
+            // hpsPermintaan
+            // 
+            this.hpsPermintaan.Location = new System.Drawing.Point(729, 297);
+            this.hpsPermintaan.Name = "hpsPermintaan";
+            this.hpsPermintaan.Size = new System.Drawing.Size(144, 54);
+            this.hpsPermintaan.TabIndex = 16;
+            this.hpsPermintaan.Text = "Hapus Permintaan";
+            this.hpsPermintaan.UseVisualStyleBackColor = true;
+            // 
             // permintaanBarang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(939, 563);
+            this.Controls.Add(this.hpsPermintaan);
+            this.Controls.Add(this.updatePminjam);
+            this.Controls.Add(this.addPeminta);
+            this.Controls.Add(this.stockBarang);
+            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.textBox4);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
@@ -145,6 +220,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "permintaanBarang";
             this.Text = "PermintaanBarang";
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -162,5 +238,12 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button stockBarang;
+        private System.Windows.Forms.Button addPeminta;
+        private System.Windows.Forms.Button updatePminjam;
+        private System.Windows.Forms.Button hpsPermintaan;
     }
 }
