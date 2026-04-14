@@ -52,8 +52,30 @@ namespace ManajemenSarPras
             cmbTipeBarang.ValueMember = "Value";
             cmbTipeBarang.SelectedIndex = -1; // Kosongkan form saat awal
 
+            LoadComboMerk();
+
             LoadDataBarang();
             ResetForm();
+        }
+
+        void LoadComboMerk()
+        {
+            try
+            {
+                using (var conn = DatabaseConfig.GetConnection())
+                {
+                    string query = "SELECT idMerk, namaMerk FROM master.merk";
+                    SqlDataAdapter da = new SqlDataAdapter(query, conn);
+                    DataTable dt = new DataTable();
+                    da.Fill(dt);
+
+                    cmbMerk.DataSource = dt; // Pastikan nama control di designer adalah cmbMerk
+                    cmbMerk.DisplayMember = "namaMerk";
+                    cmbMerk.ValueMember = "idMerk";
+                    cmbMerk.SelectedIndex = -1;
+                }
+            }
+            catch (Exception ex) { MessageBox.Show("Gagal load merk: " + ex.Message); }
         }
 
         private void LoadDataBarang(string keyword = "")
@@ -66,19 +88,21 @@ namespace ManajemenSarPras
 
                     // TAMBAHAN MERK: Memasukkan kolom merk ke dalam query
                     string query = @"
-                        SELECT 
-                            idBarang AS [ID/Kode Barang],
-                            namaBarang AS [Nama Barang],
-                            merk AS [Merk],
-                            stok AS [Sisa Stok],
-                            CASE WHEN tipeBarang = 1 THEN 'Aset Tetap (Rutin)' ELSE 'Habis Pakai (Non-Rutin)' END AS [Kategori],
-                            tipeBarang -- Kolom tersembunyi untuk logika sistem
-                        FROM master.barang";
+                    SELECT 
+                        b.idBarang AS [ID/Kode Barang],
+                        b.namaBarang AS [Nama Barang],
+                        m.namaMerk AS [Merk],
+                        b.stok AS [Sisa Stok],
+                        CASE WHEN b.tipeBarang = 1 THEN 'Aset Tetap (Rutin)' ELSE 'Habis Pakai (Non-Rutin)' END AS [Kategori],
+                        b.tipeBarang,
+                        b.idMerk -- Simpan ID untuk keperluan edit
+                    FROM master.barang b
+                    LEFT JOIN master.merk m ON b.idMerk = m.idMerk";
 
                     // Pencarian sekarang juga mencakup Merk
                     if (!string.IsNullOrEmpty(keyword))
                     {
-                        query += " WHERE namaBarang LIKE @keyword OR idBarang LIKE @keyword OR merk LIKE @keyword";
+                        query += " WHERE b.namaBarang LIKE @keyword OR b.idBarang LIKE @keyword OR m.namaMerk LIKE @keyword";
                     }
 
                     using (var cmd = new SqlCommand(query, conn))
@@ -111,7 +135,7 @@ namespace ManajemenSarPras
         {
             txtIdBarang.Clear();
             txtNamaBarang.Clear();
-            txtMerk.Clear(); // TAMBAHAN MERK: Kosongkan text merk
+            cmbMerk.SelectedIndex = -1; // TAMBAHAN MERK: Kosongkan text merk
             txtJumlahBarang.Clear();
             cmbTipeBarang.SelectedIndex = -1;
 
@@ -184,7 +208,7 @@ namespace ManajemenSarPras
                 originalIdBarang = row.Cells["ID/Kode Barang"].Value.ToString();
                 txtIdBarang.Text = originalIdBarang;
                 txtNamaBarang.Text = row.Cells["Nama Barang"].Value.ToString();
-                txtMerk.Text = row.Cells["Merk"].Value.ToString(); // TAMBAHAN MERK: Tarik dari grid
+                cmbMerk.Text = row.Cells["Merk"].Value.ToString(); // TAMBAHAN MERK: Tarik dari grid
                 txtJumlahBarang.Text = row.Cells["Sisa Stok"].Value.ToString();
 
                 // Memicu cmbTipeBarang_SelectedIndexChanged secara otomatis
@@ -204,21 +228,25 @@ namespace ManajemenSarPras
         // ==========================================================
         private void btnSimpan_Click(object sender, EventArgs e)
         {
-            // 1. Validasi Input Kosong (TERMASUK MERK)
-            if (string.IsNullOrWhiteSpace(txtIdBarang.Text) || string.IsNullOrWhiteSpace(txtNamaBarang.Text) ||
-                string.IsNullOrWhiteSpace(txtMerk.Text) || string.IsNullOrWhiteSpace(txtJumlahBarang.Text) || cmbTipeBarang.SelectedValue == null)
+            // 1. Validasi Input Kosong
+            if (string.IsNullOrWhiteSpace(txtIdBarang.Text) ||
+                string.IsNullOrWhiteSpace(txtNamaBarang.Text) ||
+                cmbMerk.SelectedValue == null || // Validasi berdasarkan pilihan ID
+                string.IsNullOrWhiteSpace(txtJumlahBarang.Text) ||
+                cmbTipeBarang.SelectedValue == null)
             {
-                MessageBox.Show("Seluruh form wajib diisi. Tidak boleh ada data yang kosong.", "Validasi Ketat", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Seluruh form wajib diisi termasuk Merk.", "Validasi Ketat", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            // 2. Smart Validation (Logika Bisnis Aset vs Habis Pakai)
+            // 2. Persiapan Data & Business Logic
             int tipeInput = Convert.ToInt32(cmbTipeBarang.SelectedValue);
             int stokInput = Convert.ToInt32(txtJumlahBarang.Text.Trim());
+            int idMerkSelected = Convert.ToInt32(cmbMerk.SelectedValue); // Ambil ID Merk
 
             if (tipeInput == 0 && stokInput <= 0 && !isEditMode)
             {
-                MessageBox.Show("Logika Bisnis Ditolak:\n\nUntuk mendaftarkan Barang Habis Pakai (Spidol, Kertas, dll), fisik barang harus sudah ada di gudang (Stok harus lebih dari 0).", "Peringatan Sistem", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Untuk Barang Habis Pakai, stok awal harus lebih dari 0.", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtJumlahBarang.Focus();
                 return;
             }
@@ -233,31 +261,30 @@ namespace ManajemenSarPras
                     string query;
                     if (isEditMode)
                     {
-                        // TAMBAHAN MERK: Update Set
-                        query = "UPDATE master.barang SET namaBarang = @nama, merk = @merk, stok = @stok, tipeBarang = @tipe WHERE idBarang = @idAsli";
+                        // Gunakan idMerk sesuai skema SQL kamu
+                        query = "UPDATE master.barang SET namaBarang = @nama, idMerk = @idMerk, stok = @stok, tipeBarang = @tipe WHERE idBarang = @idAsli";
                     }
                     else
                     {
-                        // Cegah ID Kembar
+                        // Cek Duplikasi ID
                         string checkQuery = "SELECT COUNT(1) FROM master.barang WHERE idBarang = @id";
                         using (var checkCmd = new SqlCommand(checkQuery, conn))
                         {
                             checkCmd.Parameters.AddWithValue("@id", txtIdBarang.Text.Trim());
                             if (Convert.ToInt32(checkCmd.ExecuteScalar()) > 0)
                             {
-                                MessageBox.Show("Kode/ID Barang tersebut sudah dipakai oleh aset lain. Gunakan ID yang unik.", "Duplikasi Data Ditolak", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                MessageBox.Show("ID Barang sudah digunakan!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                 return;
                             }
                         }
-                        // TAMBAHAN MERK: Insert
-                        query = "INSERT INTO master.barang (idBarang, namaBarang, merk, stok, tipeBarang) VALUES (@id, @nama, @merk, @stok, @tipe)";
+                        query = "INSERT INTO master.barang (idBarang, namaBarang, idMerk, stok, tipeBarang) VALUES (@id, @nama, @idMerk, @stok, @tipe)";
                     }
 
                     using (var cmd = new SqlCommand(query, conn))
                     {
                         cmd.Parameters.AddWithValue("@id", txtIdBarang.Text.Trim());
                         cmd.Parameters.AddWithValue("@nama", txtNamaBarang.Text.Trim());
-                        cmd.Parameters.AddWithValue("@merk", txtMerk.Text.Trim()); // Binding Merk
+                        cmd.Parameters.AddWithValue("@idMerk", idMerkSelected); // Input berupa INT (ID)
                         cmd.Parameters.AddWithValue("@stok", stokInput);
                         cmd.Parameters.AddWithValue("@tipe", tipeInput);
 
@@ -265,16 +292,18 @@ namespace ManajemenSarPras
 
                         cmd.ExecuteNonQuery();
 
-                        MessageBox.Show($"Data inventaris berhasil {(isEditMode ? "diperbarui" : "disimpan")}!", "Operasi Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show($"Data inventaris berhasil {(isEditMode ? "diperbarui" : "disimpan")}!", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                         LoadDataBarang();
                         ResetForm();
                     }
                 }
             }
-            catch (Exception ex) { MessageBox.Show("Kegagalan Server Database: " + ex.Message, "System Error", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Kesalahan Database: " + ex.Message, "System Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
-
         private void btnHapus_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(originalIdBarang)) return;
@@ -327,15 +356,6 @@ namespace ManajemenSarPras
 
         }
 
-        private void button3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void kelolaBarang_Load(object sender, EventArgs e)
-        {
-
-        }
 
         private void txtNamaBarang_TextChanged(object sender, EventArgs e)
         {
@@ -358,11 +378,6 @@ namespace ManajemenSarPras
         }
 
         private void btnUpdateBarang_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void cmbTipeBarang_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
