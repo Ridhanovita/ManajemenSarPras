@@ -43,9 +43,9 @@
             // 
             // txtCari
             // 
-            this.txtCari.Location = new System.Drawing.Point(579, 159);
+            this.txtCari.Location = new System.Drawing.Point(520, 134);
             this.txtCari.Name = "txtCari";
-            this.txtCari.Size = new System.Drawing.Size(509, 56);
+            this.txtCari.Size = new System.Drawing.Size(509, 48);
             this.txtCari.TabIndex = 42;
             this.txtCari.Text = "";
             this.txtCari.TextChanged += new System.EventHandler(this.txtCari_TextChanged);
@@ -54,9 +54,9 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(460, 162);
+            this.label1.Location = new System.Drawing.Point(402, 140);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(109, 44);
+            this.label1.Size = new System.Drawing.Size(74, 30);
             this.label1.TabIndex = 41;
             this.label1.Text = "CARI \r\nSEMESTER";
             // 
@@ -65,7 +65,7 @@
             this.btnDelete.BackColor = System.Drawing.Color.Red;
             this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnDelete.Location = new System.Drawing.Point(75, 434);
+            this.btnDelete.Location = new System.Drawing.Point(16, 409);
             this.btnDelete.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(357, 56);
@@ -79,7 +79,7 @@
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(464, 230);
+            this.dataGridView1.Location = new System.Drawing.Point(405, 205);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 62;
@@ -91,7 +91,7 @@
             // btnUpdate
             // 
             this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdate.Location = new System.Drawing.Point(273, 363);
+            this.btnUpdate.Location = new System.Drawing.Point(214, 338);
             this.btnUpdate.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(159, 56);
@@ -104,7 +104,7 @@
             // 
             this.btnTambah.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btnTambah.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTambah.Location = new System.Drawing.Point(75, 363);
+            this.btnTambah.Location = new System.Drawing.Point(16, 338);
             this.btnTambah.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnTambah.Name = "btnTambah";
             this.btnTambah.Size = new System.Drawing.Size(174, 56);
@@ -115,7 +115,7 @@
             // 
             // txtTahunAjaran
             // 
-            this.txtTahunAjaran.Location = new System.Drawing.Point(160, 279);
+            this.txtTahunAjaran.Location = new System.Drawing.Point(101, 254);
             this.txtTahunAjaran.Name = "txtTahunAjaran";
             this.txtTahunAjaran.Size = new System.Drawing.Size(272, 43);
             this.txtTahunAjaran.TabIndex = 35;
@@ -124,7 +124,7 @@
             // labelIdKaryawan
             // 
             this.labelIdKaryawan.AutoSize = true;
-            this.labelIdKaryawan.Location = new System.Drawing.Point(81, 279);
+            this.labelIdKaryawan.Location = new System.Drawing.Point(22, 254);
             this.labelIdKaryawan.Name = "labelIdKaryawan";
             this.labelIdKaryawan.Size = new System.Drawing.Size(73, 40);
             this.labelIdKaryawan.TabIndex = 34;
@@ -136,7 +136,7 @@
             this.labelTitle.Font = new System.Drawing.Font("Stencil", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTitle.Location = new System.Drawing.Point(324, 78);
             this.labelTitle.Name = "labelTitle";
-            this.labelTitle.Size = new System.Drawing.Size(443, 38);
+            this.labelTitle.Size = new System.Drawing.Size(314, 26);
             this.labelTitle.TabIndex = 33;
             this.labelTitle.Text = "PENGELOLAHAN SEMESTER";
             // 
@@ -155,7 +155,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(939, 563);
+            this.ClientSize = new System.Drawing.Size(1048, 563);
             this.Controls.Add(this.txtCari);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnDelete);
