@@ -35,17 +35,19 @@
             this.namaPeminta = new System.Windows.Forms.Label();
             this.jml = new System.Windows.Forms.Label();
             this.idSmt = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.txtIdBarang = new System.Windows.Forms.TextBox();
+            this.txtNma = new System.Windows.Forms.TextBox();
+            this.txtJmlh = new System.Windows.Forms.TextBox();
+            this.txtSmt = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.stockBarang = new System.Windows.Forms.Button();
             this.addPeminta = new System.Windows.Forms.Button();
             this.updatePminjam = new System.Windows.Forms.Button();
             this.hpsPermintaan = new System.Windows.Forms.Button();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.cmbRuangan = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // btnKembali
@@ -114,102 +116,114 @@
             this.idSmt.TabIndex = 6;
             this.idSmt.Text = "Semester";
             // 
-            // textBox1
+            // txtIdBarang
             // 
-            this.textBox1.Location = new System.Drawing.Point(232, 122);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(156, 26);
-            this.textBox1.TabIndex = 7;
+            this.txtIdBarang.Location = new System.Drawing.Point(232, 122);
+            this.txtIdBarang.Name = "txtIdBarang";
+            this.txtIdBarang.Size = new System.Drawing.Size(156, 26);
+            this.txtIdBarang.TabIndex = 7;
             // 
-            // textBox2
+            // txtNma
             // 
-            this.textBox2.Location = new System.Drawing.Point(232, 181);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(156, 26);
-            this.textBox2.TabIndex = 8;
+            this.txtNma.Location = new System.Drawing.Point(232, 232);
+            this.txtNma.Name = "txtNma";
+            this.txtNma.Size = new System.Drawing.Size(207, 26);
+            this.txtNma.TabIndex = 9;
             // 
-            // textBox3
+            // txtJmlh
             // 
-            this.textBox3.Location = new System.Drawing.Point(232, 232);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(274, 26);
-            this.textBox3.TabIndex = 9;
+            this.txtJmlh.Location = new System.Drawing.Point(232, 283);
+            this.txtJmlh.Name = "txtJmlh";
+            this.txtJmlh.Size = new System.Drawing.Size(156, 26);
+            this.txtJmlh.TabIndex = 10;
             // 
-            // textBox4
+            // txtSmt
             // 
-            this.textBox4.Location = new System.Drawing.Point(232, 283);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(156, 26);
-            this.textBox4.TabIndex = 10;
-            // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point(232, 330);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(156, 26);
-            this.textBox5.TabIndex = 11;
+            this.txtSmt.Location = new System.Drawing.Point(232, 330);
+            this.txtSmt.Name = "txtSmt";
+            this.txtSmt.Size = new System.Drawing.Size(156, 26);
+            this.txtSmt.TabIndex = 11;
             // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(35, 375);
+            this.dataGridView1.Location = new System.Drawing.Point(464, 181);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(850, 184);
+            this.dataGridView1.Size = new System.Drawing.Size(463, 184);
             this.dataGridView1.TabIndex = 12;
             // 
             // stockBarang
             // 
-            this.stockBarang.Location = new System.Drawing.Point(729, 108);
+            this.stockBarang.Location = new System.Drawing.Point(511, 139);
             this.stockBarang.Name = "stockBarang";
-            this.stockBarang.Size = new System.Drawing.Size(144, 54);
+            this.stockBarang.Size = new System.Drawing.Size(164, 31);
             this.stockBarang.TabIndex = 13;
             this.stockBarang.Text = "Tampilkan Stock";
             this.stockBarang.UseVisualStyleBackColor = true;
             // 
             // addPeminta
             // 
-            this.addPeminta.Location = new System.Drawing.Point(729, 168);
+            this.addPeminta.Location = new System.Drawing.Point(511, 102);
             this.addPeminta.Name = "addPeminta";
-            this.addPeminta.Size = new System.Drawing.Size(144, 54);
+            this.addPeminta.Size = new System.Drawing.Size(164, 31);
             this.addPeminta.TabIndex = 14;
             this.addPeminta.Text = "Tambah Permintaan";
             this.addPeminta.UseVisualStyleBackColor = true;
             // 
             // updatePminjam
             // 
-            this.updatePminjam.Location = new System.Drawing.Point(729, 232);
+            this.updatePminjam.Location = new System.Drawing.Point(719, 102);
             this.updatePminjam.Name = "updatePminjam";
-            this.updatePminjam.Size = new System.Drawing.Size(144, 54);
+            this.updatePminjam.Size = new System.Drawing.Size(164, 31);
             this.updatePminjam.TabIndex = 15;
             this.updatePminjam.Text = "Update Permintaan";
             this.updatePminjam.UseVisualStyleBackColor = true;
             // 
             // hpsPermintaan
             // 
-            this.hpsPermintaan.Location = new System.Drawing.Point(729, 297);
+            this.hpsPermintaan.Location = new System.Drawing.Point(719, 139);
             this.hpsPermintaan.Name = "hpsPermintaan";
-            this.hpsPermintaan.Size = new System.Drawing.Size(144, 54);
+            this.hpsPermintaan.Size = new System.Drawing.Size(164, 31);
             this.hpsPermintaan.TabIndex = 16;
             this.hpsPermintaan.Text = "Hapus Permintaan";
             this.hpsPermintaan.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Location = new System.Drawing.Point(35, 376);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.RowHeadersWidth = 62;
+            this.dataGridView2.RowTemplate.Height = 28;
+            this.dataGridView2.Size = new System.Drawing.Size(892, 184);
+            this.dataGridView2.TabIndex = 17;
+            // 
+            // cmbRuangan
+            // 
+            this.cmbRuangan.FormattingEnabled = true;
+            this.cmbRuangan.Location = new System.Drawing.Point(232, 172);
+            this.cmbRuangan.Name = "cmbRuangan";
+            this.cmbRuangan.Size = new System.Drawing.Size(156, 28);
+            this.cmbRuangan.TabIndex = 18;
             // 
             // permintaanBarang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(939, 563);
+            this.Controls.Add(this.cmbRuangan);
+            this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.hpsPermintaan);
             this.Controls.Add(this.updatePminjam);
             this.Controls.Add(this.addPeminta);
             this.Controls.Add(this.stockBarang);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtSmt);
+            this.Controls.Add(this.txtJmlh);
+            this.Controls.Add(this.txtNma);
+            this.Controls.Add(this.txtIdBarang);
             this.Controls.Add(this.idSmt);
             this.Controls.Add(this.jml);
             this.Controls.Add(this.namaPeminta);
@@ -221,6 +235,7 @@
             this.Name = "permintaanBarang";
             this.Text = "PermintaanBarang";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -235,15 +250,16 @@
         private System.Windows.Forms.Label namaPeminta;
         private System.Windows.Forms.Label jml;
         private System.Windows.Forms.Label idSmt;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox txtIdBarang;
+        private System.Windows.Forms.TextBox txtNma;
+        private System.Windows.Forms.TextBox txtJmlh;
+        private System.Windows.Forms.TextBox txtSmt;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button stockBarang;
         private System.Windows.Forms.Button addPeminta;
         private System.Windows.Forms.Button updatePminjam;
         private System.Windows.Forms.Button hpsPermintaan;
+        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.ComboBox cmbRuangan;
     }
 }
