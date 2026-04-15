@@ -2,6 +2,7 @@ using SatprasDesktopApp.Config;
 using System;
 using System.Data;
 using System.Data.SqlClient;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace ManajemenSarPras
@@ -15,6 +16,9 @@ namespace ManajemenSarPras
         public permintaanBarang()
         {
             InitializeComponent();
+
+            this.txtIdBarang.ReadOnly = true;
+            this.txtIdBarang.BackColor = SystemColors.Control;
 
             this.Load += new EventHandler(permintaanBarang_Load);
             this.addPeminta.Click += new EventHandler(btnSimpan_Click);
@@ -94,11 +98,11 @@ namespace ManajemenSarPras
                 {
                     if (conn == null) return;
 
-                    string query = "SELECT idBarang AS [ID], namaBarang AS [Nama], stok AS [Stok] FROM [master].[barang]";
+                    string query = "SELECT idBarang AS [ID], namaBarang AS [Nama], stok AS [Stok] FROM [master].[barang] WHERE tipeBarang = 0";
 
                     if (!string.IsNullOrEmpty(keyword))
                     {
-                        query += " WHERE namaBarang LIKE @kw OR idBarang LIKE @kw";
+                        query += " AND (namaBarang LIKE @kw OR idBarang LIKE @kw)";
                     }
 
                     using (SqlCommand cmd = new SqlCommand(query, conn))
@@ -139,11 +143,12 @@ namespace ManajemenSarPras
                         FROM [transaction].[permintaanBarang] p
                         JOIN [master].[barang] b ON p.idBarang = b.idBarang
                         JOIN [master].[ruangan] r ON p.idRuangan = r.idRuangan
-                        JOIN [master].[semester] s ON p.idSemester = s.idSemester";
+                        JOIN [master].[semester] s ON p.idSemester = s.idSemester
+                        WHERE b.tipeBarang = 0";
 
                     if (!string.IsNullOrEmpty(keyword))
                     {
-                        query += " WHERE b.namaBarang LIKE @kw OR p.namaPeminta LIKE @kw OR r.namaRuangan LIKE @kw OR p.idPermintaanBarang LIKE @kw";
+                        query += " AND (b.namaBarang LIKE @kw OR p.namaPeminta LIKE @kw OR r.namaRuangan LIKE @kw OR p.idPermintaanBarang LIKE @kw)";
                     }
 
                     using (SqlCommand cmd = new SqlCommand(query, conn))
