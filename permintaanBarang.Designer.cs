@@ -38,7 +38,6 @@
             this.txtIdBarang = new System.Windows.Forms.TextBox();
             this.txtNma = new System.Windows.Forms.TextBox();
             this.txtJmlh = new System.Windows.Forms.TextBox();
-            this.txtSmt = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.stockBarang = new System.Windows.Forms.Button();
             this.addPeminta = new System.Windows.Forms.Button();
@@ -46,6 +45,7 @@
             this.hpsPermintaan = new System.Windows.Forms.Button();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.cmbRuangan = new System.Windows.Forms.ComboBox();
+            this.cmbSemester = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
@@ -137,13 +137,6 @@
             this.txtJmlh.Size = new System.Drawing.Size(156, 26);
             this.txtJmlh.TabIndex = 10;
             // 
-            // txtSmt
-            // 
-            this.txtSmt.Location = new System.Drawing.Point(232, 330);
-            this.txtSmt.Name = "txtSmt";
-            this.txtSmt.Size = new System.Drawing.Size(156, 26);
-            this.txtSmt.TabIndex = 11;
-            // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -208,11 +201,20 @@
             this.cmbRuangan.Size = new System.Drawing.Size(156, 28);
             this.cmbRuangan.TabIndex = 18;
             // 
+            // cmbSemester
+            // 
+            this.cmbSemester.FormattingEnabled = true;
+            this.cmbSemester.Location = new System.Drawing.Point(232, 327);
+            this.cmbSemester.Name = "cmbSemester";
+            this.cmbSemester.Size = new System.Drawing.Size(156, 28);
+            this.cmbSemester.TabIndex = 19;
+            // 
             // permintaanBarang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(939, 563);
+            this.Controls.Add(this.cmbSemester);
             this.Controls.Add(this.cmbRuangan);
             this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.hpsPermintaan);
@@ -220,7 +222,6 @@
             this.Controls.Add(this.addPeminta);
             this.Controls.Add(this.stockBarang);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.txtSmt);
             this.Controls.Add(this.txtJmlh);
             this.Controls.Add(this.txtNma);
             this.Controls.Add(this.txtIdBarang);
@@ -253,7 +254,6 @@
         private System.Windows.Forms.TextBox txtIdBarang;
         private System.Windows.Forms.TextBox txtNma;
         private System.Windows.Forms.TextBox txtJmlh;
-        private System.Windows.Forms.TextBox txtSmt;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button stockBarang;
         private System.Windows.Forms.Button addPeminta;
@@ -261,5 +261,6 @@
         private System.Windows.Forms.Button hpsPermintaan;
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.ComboBox cmbRuangan;
+        private System.Windows.Forms.ComboBox cmbSemester;
     }
 }
