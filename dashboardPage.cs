@@ -7,104 +7,88 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-<<<<<<< HEAD
 using System.Data.SqlClient;
-using SatprasDesktopApp.Config;
+using SatprasDesktopApp.Config; // Ini buat manggil DatabaseConfig kamu
 
 namespace ManajemenSarPras
 {
-    public partial class dashboardPage: Form
+    public partial class dashboardPage : Form
     {
-        
         public dashboardPage()
-=======
-
-namespace ManajemenSarPras
-{
-    public partial class maintenancePage: Form
-    {
-        public maintenancePage()
->>>>>>> 99874df1cda1c5114fd31cdd8ab7758ba1a6ad75
         {
             InitializeComponent();
         }
 
-<<<<<<< HEAD
+        // 1. Navigasi ke Kelola Barang
         private void kelolaBarang_Click(object sender, EventArgs e)
         {
-            kelolaBarang kelolaBarang = new kelolaBarang();
-            kelolaBarang.Show();
+            kelolaBarang formBarang = new kelolaBarang();
+            formBarang.Show();
             this.Hide();
         }
 
+        // 2. Navigasi ke Permintaan Barang
         private void permintaanBarang_Click(object sender, EventArgs e)
         {
-            permintaanBarang mintaBarang = new permintaanBarang();
-            mintaBarang.Show();
+            permintaanBarang formMinta = new permintaanBarang();
+            formMinta.Show();
             this.Hide();
         }
 
+        // 3. Navigasi ke Form Karyawan (Pengecekan Rutin)
         private void pengecekanRutin_Click(object sender, EventArgs e)
         {
-            karyawan cekRutin = new karyawan();
-            cekRutin.Show();
+            karyawan formKaryawan = new karyawan();
+            formKaryawan.Show();
             this.Hide();
         }
 
+        // 4. Navigasi ke Maintenance
         private void maintennce_Click(object sender, EventArgs e)
         {
-            maintenancePage maintennce = new maintenancePage();
-            maintennce.Show();
+            maintenancePage formMaintenance = new maintenancePage();
+            formMaintenance.Show();
             this.Hide();
         }
 
+        // 5. Navigasi ke Report
         private void report_Click(object sender, EventArgs e)
         {
-            reportPage report = new reportPage();
-            report.Show();
+            reportPage formReport = new reportPage();
+            formReport.Show();
             this.Hide();
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
+        // 6. Navigasi ke Semester
         private void btnNavigasiSemester_Click(object sender, EventArgs e)
         {
-            formSemester semester = new formSemester();
-            semester.Show();
+            formSemester formSem = new formSemester();
+            formSem.Show();
             this.Hide();
         }
 
+        // 7. Test Koneksi Database (Tombol Karyawan yang besar)
         private void button1_Click(object sender, EventArgs e)
         {
-            using (SqlConnection conn = DatabaseConfig.GetConnection())
+            try
             {
-                if (conn != null && conn.State == ConnectionState.Open)
+                using (SqlConnection conn = DatabaseConfig.GetConnection())
                 {
-                    MessageBox.Show("Koneksi berhasil!");
+                    if (conn != null && conn.State == ConnectionState.Open)
+                    {
+                        MessageBox.Show("Koneksi ke satprasDB Berhasil, Tam! Gaspol!", "Info Koneksi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
                 }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Waduh, koneksi gagal: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private void dashboardPage_Load(object sender, EventArgs e)
         {
-
+            // Bisa dikosongkan atau buat narik data statistik ringkas
         }
-=======
-        private void btnKembali_Click(object sender, EventArgs e)
-        {
-<<<<<<<< HEAD:maintenancePage.cs
-            dashboardPage dashboard = new dashboardPage();
-            dashboard.Show();
-            this.Hide();
-========
-            kelolaBarang kelolaBarang = new kelolaBarang();
-            kelolaBarang.Show();
->>>>>>>> 99874df1cda1c5114fd31cdd8ab7758ba1a6ad75:dashboardPage.cs
-        }
-
->>>>>>> 99874df1cda1c5114fd31cdd8ab7758ba1a6ad75
     }
 }

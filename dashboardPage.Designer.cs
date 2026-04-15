@@ -1,20 +1,9 @@
 ﻿namespace ManajemenSarPras
 {
-<<<<<<< HEAD
     partial class dashboardPage
-=======
-    partial class maintenancePage
->>>>>>> 99874df1cda1c5114fd31cdd8ab7758ba1a6ad75
     {
-        /// <summary>
-        /// Required designer variable.
-        /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
-        /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -26,13 +15,8 @@
 
         #region Windows Form Designer generated code
 
-        /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
-        /// </summary>
         private void InitializeComponent()
         {
-<<<<<<< HEAD
             this.components = new System.ComponentModel.Container();
             this.kelolaBarang = new System.Windows.Forms.Button();
             this.permintaanBarang = new System.Windows.Forms.Button();
@@ -43,29 +27,15 @@
             this.btnNavigasiSemester = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-=======
-            this.kelolaBarang = new System.Windows.Forms.Button();
-            this.permintaanBarang = new System.Windows.Forms.Button();
-            this.pengecekanRutin = new System.Windows.Forms.Button();
-            this.maintennce = new System.Windows.Forms.Button();
-            this.report = new System.Windows.Forms.Button();
->>>>>>> 99874df1cda1c5114fd31cdd8ab7758ba1a6ad75
             this.SuspendLayout();
             // 
             // kelolaBarang
             // 
-<<<<<<< HEAD
             this.kelolaBarang.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.kelolaBarang.Location = new System.Drawing.Point(174, 199);
             this.kelolaBarang.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.kelolaBarang.Name = "kelolaBarang";
             this.kelolaBarang.Size = new System.Drawing.Size(180, 50);
-=======
-            this.kelolaBarang.Location = new System.Drawing.Point(51, 82);
-            this.kelolaBarang.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.kelolaBarang.Name = "kelolaBarang";
-            this.kelolaBarang.Size = new System.Drawing.Size(160, 40);
->>>>>>> 99874df1cda1c5114fd31cdd8ab7758ba1a6ad75
             this.kelolaBarang.TabIndex = 0;
             this.kelolaBarang.Text = "Kelola Barang";
             this.kelolaBarang.UseVisualStyleBackColor = true;
@@ -73,7 +43,6 @@
             // 
             // permintaanBarang
             // 
-<<<<<<< HEAD
             this.permintaanBarang.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.permintaanBarang.Location = new System.Drawing.Point(174, 323);
             this.permintaanBarang.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -154,12 +123,6 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
-            // 
             // dashboardPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -178,68 +141,12 @@
             this.Load += new System.EventHandler(this.dashboardPage_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
-=======
-            this.permintaanBarang.Location = new System.Drawing.Point(260, 82);
-            this.permintaanBarang.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.permintaanBarang.Name = "permintaanBarang";
-            this.permintaanBarang.Size = new System.Drawing.Size(160, 40);
-            this.permintaanBarang.TabIndex = 1;
-            this.permintaanBarang.Text = "Permintaan Barang";
-            this.permintaanBarang.UseVisualStyleBackColor = true;
-            // 
-            // pengecekanRutin
-            // 
-            this.pengecekanRutin.Location = new System.Drawing.Point(470, 82);
-            this.pengecekanRutin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pengecekanRutin.Name = "pengecekanRutin";
-            this.pengecekanRutin.Size = new System.Drawing.Size(160, 40);
-            this.pengecekanRutin.TabIndex = 2;
-            this.pengecekanRutin.Text = "Cek Rutin";
-            this.pengecekanRutin.UseVisualStyleBackColor = true;
-            // 
-            // maintennce
-            // 
-            this.maintennce.Location = new System.Drawing.Point(140, 194);
-            this.maintennce.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.maintennce.Name = "maintennce";
-            this.maintennce.Size = new System.Drawing.Size(160, 40);
-            this.maintennce.TabIndex = 3;
-            this.maintennce.Text = "Maintenance";
-            this.maintennce.UseVisualStyleBackColor = true;
-            // 
-            // report
-            // 
-            this.report.Location = new System.Drawing.Point(366, 194);
-            this.report.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.report.Name = "report";
-            this.report.Size = new System.Drawing.Size(160, 40);
-            this.report.TabIndex = 4;
-            this.report.Text = "Report";
-            this.report.UseVisualStyleBackColor = true;
-            // 
-            // maintenancePage
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(711, 360);
-            this.Controls.Add(this.report);
-            this.Controls.Add(this.maintennce);
-            this.Controls.Add(this.pengecekanRutin);
-            this.Controls.Add(this.permintaanBarang);
-            this.Controls.Add(this.kelolaBarang);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Name = "maintenancePage";
-            this.Text = "Maintenance";
-            this.ResumeLayout(false);
->>>>>>> 99874df1cda1c5114fd31cdd8ab7758ba1a6ad75
-
         }
 
         #endregion
 
         private System.Windows.Forms.Button kelolaBarang;
         private System.Windows.Forms.Button permintaanBarang;
-<<<<<<< HEAD
         private System.Windows.Forms.Button labelKaryawan;
         private System.Windows.Forms.Button maintennce;
         private System.Windows.Forms.Button report;
@@ -247,11 +154,5 @@
         private System.Windows.Forms.Button btnNavigasiSemester;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
-=======
-        private System.Windows.Forms.Button pengecekanRutin;
-        private System.Windows.Forms.Button maintennce;
-        private System.Windows.Forms.Button report;
->>>>>>> 99874df1cda1c5114fd31cdd8ab7758ba1a6ad75
     }
 }
-
