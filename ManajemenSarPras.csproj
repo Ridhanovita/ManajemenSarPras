@@ -85,6 +85,7 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
     <Compile Include="FormDetailBarang.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -106,6 +107,17 @@
     <Compile Include="dashboardPage.cs">
       <SubType>Form</SubType>
     </Compile>
+=======
+    <Compile Include="cekRutin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cekRutin.Designer.cs">
+      <DependentUpon>cekRutin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="dashboardPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+>>>>>>> 99874df1cda1c5114fd31cdd8ab7758ba1a6ad75
     <Compile Include="dashboardPage.Designer.cs">
       <DependentUpon>dashboardPage.cs</DependentUpon>
     </Compile>
@@ -135,6 +147,7 @@
     <Compile Include="reportPage.Designer.cs">
       <DependentUpon>reportPage.cs</DependentUpon>
     </Compile>
+<<<<<<< HEAD
     <Compile Include="utils\databaseConnection.cs" />
     <EmbeddedResource Include="dashboardPage.resx">
       <DependentUpon>dashboardPage.cs</DependentUpon>
@@ -156,6 +169,13 @@
     </EmbeddedResource>
     <EmbeddedResource Include="permintaanBarang.resx">
       <DependentUpon>permintaanBarang.cs</DependentUpon>
+=======
+    <EmbeddedResource Include="dashboardPage.resx">
+      <DependentUpon>dashboardPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="maintenancePage.resx">
+      <DependentUpon>maintenancePage.cs</DependentUpon>
+>>>>>>> 99874df1cda1c5114fd31cdd8ab7758ba1a6ad75
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -1,11 +1,23 @@
+<<<<<<< HEAD
 ﻿using SatprasDesktopApp.Config;
 using System;
 using System.Data;
 using System.Data.SqlClient;
+=======
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+>>>>>>> 99874df1cda1c5114fd31cdd8ab7758ba1a6ad75
 using System.Windows.Forms;
 
 namespace ManajemenSarPras
 {
+<<<<<<< HEAD
     public partial class permintaanBarang : Form
     {
         // State Management untuk melacak data sebelum diubah
@@ -204,3 +216,13 @@ namespace ManajemenSarPras
         private void btnKembali_Click(object sender, EventArgs e) { new dashboardPage().Show(); this.Hide(); }
     }
 }
+=======
+    public partial class permintaanBarang: Form
+    {
+        public permintaanBarang()
+        {
+            InitializeComponent();
+        }
+    }
+}
+>>>>>>> 99874df1cda1c5114fd31cdd8ab7758ba1a6ad75

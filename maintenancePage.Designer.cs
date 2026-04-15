@@ -1,6 +1,10 @@
 ﻿namespace ManajemenSarPras
 {
+<<<<<<< HEAD
     partial class maintenancePage
+=======
+    partial class mntenncePage
+>>>>>>> 99874df1cda1c5114fd31cdd8ab7758ba1a6ad75
     {
         /// <summary>
         /// Required designer variable.
@@ -28,6 +32,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+<<<<<<< HEAD
             this.btnKembali = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -50,13 +55,26 @@
             this.Controls.Add(this.btnKembali);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "maintenancePage";
+=======
+            this.SuspendLayout();
+            // 
+            // mntenncePage
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Name = "mntenncePage";
+>>>>>>> 99874df1cda1c5114fd31cdd8ab7758ba1a6ad75
             this.Text = "mntenncePage";
             this.ResumeLayout(false);
 
         }
 
         #endregion
+<<<<<<< HEAD
 
         private System.Windows.Forms.Button btnKembali;
+=======
+>>>>>>> 99874df1cda1c5114fd31cdd8ab7758ba1a6ad75
     }
 }

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+<<<<<<< HEAD
 using System.Data.SqlClient;
 using SatprasDesktopApp.Config;
 
@@ -16,10 +17,19 @@ namespace ManajemenSarPras
     {
         
         public dashboardPage()
+=======
+
+namespace ManajemenSarPras
+{
+    public partial class maintenancePage: Form
+    {
+        public maintenancePage()
+>>>>>>> 99874df1cda1c5114fd31cdd8ab7758ba1a6ad75
         {
             InitializeComponent();
         }
 
+<<<<<<< HEAD
         private void kelolaBarang_Click(object sender, EventArgs e)
         {
             kelolaBarang kelolaBarang = new kelolaBarang();
@@ -82,5 +92,19 @@ namespace ManajemenSarPras
         {
 
         }
+=======
+        private void btnKembali_Click(object sender, EventArgs e)
+        {
+<<<<<<<< HEAD:maintenancePage.cs
+            dashboardPage dashboard = new dashboardPage();
+            dashboard.Show();
+            this.Hide();
+========
+            kelolaBarang kelolaBarang = new kelolaBarang();
+            kelolaBarang.Show();
+>>>>>>>> 99874df1cda1c5114fd31cdd8ab7758ba1a6ad75:dashboardPage.cs
+        }
+
+>>>>>>> 99874df1cda1c5114fd31cdd8ab7758ba1a6ad75
     }
 }
