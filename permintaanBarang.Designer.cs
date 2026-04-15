@@ -207,7 +207,7 @@
             // cmbSemester
             // 
             this.cmbSemester.FormattingEnabled = true;
-            this.cmbSemester.Location = new System.Drawing.Point(232, 322);
+            this.cmbSemester.Location = new System.Drawing.Point(225, 322);
             this.cmbSemester.Name = "cmbSemester";
             this.cmbSemester.Size = new System.Drawing.Size(207, 28);
             this.cmbSemester.TabIndex = 19;
