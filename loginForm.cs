@@ -8,13 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using SatprasDesktopApp.Config;
 
 namespace ManajemenSarPras
 {
 
     public partial class loginForm: Form
     {
-        string connectionString = @"Data Source=tomiskibidi\TAMA;Initial Catalog=satprasDB;Integrated Security=True";
         public loginForm()
         {
             InitializeComponent();
@@ -35,11 +35,14 @@ namespace ManajemenSarPras
 
             try
             {
-                using (SqlConnection connection = new SqlConnection(connectionString))
+                using (var connection = DatabaseConfig.GetConnection())
                 {
+                    if (connection.State != ConnectionState.Open)
+                    {
+                        connection.Open();  
+                    }
                     // ambil data di db
-                    connection.Open();
-                    string query = "SELECT COUNT(*) FROM [master].users WHERE email = @Email AND password = @Password";
+                    string query = "SELECT COUNT(1) FROM [master].users WHERE email = @Email AND password = @Password";
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
                         // parameter untuk mencegah SQL Injection
