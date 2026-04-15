@@ -77,7 +77,6 @@
             this.dataGridView1.RowTemplate.Height = 28;
             this.dataGridView1.Size = new System.Drawing.Size(508, 390);
             this.dataGridView1.TabIndex = 1;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // label1
             // 
@@ -85,7 +84,7 @@
             this.label1.Font = new System.Drawing.Font("Stencil", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(256, 42);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(566, 57);
+            this.label1.Size = new System.Drawing.Size(381, 38);
             this.label1.TabIndex = 2;
             this.label1.Text = "PENGELOLAAN BARANG";
             // 
@@ -105,7 +104,6 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(0, 20);
             this.label3.TabIndex = 4;
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // contextMenuStrip1
             // 
@@ -119,7 +117,6 @@
             this.txtNamaBarang.Name = "txtNamaBarang";
             this.txtNamaBarang.Size = new System.Drawing.Size(215, 26);
             this.txtNamaBarang.TabIndex = 6;
-            this.txtNamaBarang.TextChanged += new System.EventHandler(this.txtNamaBarang_TextChanged);
             // 
             // txtIdBarang
             // 
@@ -201,7 +198,6 @@
             this.labelJumlahBarang.Size = new System.Drawing.Size(151, 40);
             this.labelJumlahBarang.TabIndex = 15;
             this.labelJumlahBarang.Text = "JUMLAH BARANG \r\nNON-CHECK";
-            this.labelJumlahBarang.Click += new System.EventHandler(this.labelJumlahBarang_Click);
             // 
             // txtJumlahBarang
             // 
@@ -209,7 +205,6 @@
             this.txtJumlahBarang.Name = "txtJumlahBarang";
             this.txtJumlahBarang.Size = new System.Drawing.Size(215, 26);
             this.txtJumlahBarang.TabIndex = 16;
-            this.txtJumlahBarang.TextChanged += new System.EventHandler(this.txtJumlahBarang_TextChanged);
             // 
             // labelCariBarang
             // 
@@ -237,8 +232,6 @@
             this.txtReset.Size = new System.Drawing.Size(110, 34);
             this.txtReset.TabIndex = 20;
             this.txtReset.Text = "Reset Text";
-            this.txtReset.UseVisualStyleBackColor = false;
-            this.txtReset.Click += new System.EventHandler(this.txtReset_Click);
             // 
             // label2
             // 
