@@ -1,7 +1,7 @@
 ﻿using SatprasDesktopApp.Config;
 using System;
+using System.Data;
 using System.Data.SqlClient;
-using SatprasDesktopApp.Config;
 using System.Windows.Forms;
 
 namespace ManajemenSarPras
@@ -30,15 +30,12 @@ namespace ManajemenSarPras
                 {
                     if (connection.State != ConnectionState.Open)
                     {
-                        connection.Open();  
+                        connection.Open();
                     }
-                    // ambil data di db
-                    string query = "SELECT COUNT(1) FROM [master].users WHERE email = @Email AND password = @Password";
-                    using (SqlCommand command = new SqlCommand(query, connection))
-                    if (connection == null) return;
 
                     string query = "SELECT COUNT(1) FROM [master].users WHERE email = @Email AND password = @Password";
-                    using (var command = new SqlCommand(query, connection))
+
+                    using (SqlCommand command = new SqlCommand(query, connection))
                     {
                         command.Parameters.AddWithValue("@Email", emailUser);
                         command.Parameters.AddWithValue("@Password", passwordUser);
