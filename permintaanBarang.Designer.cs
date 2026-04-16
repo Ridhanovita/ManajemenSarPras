@@ -207,18 +207,17 @@
             // cmbSemester
             // 
             this.cmbSemester.FormattingEnabled = true;
-            this.cmbSemester.Location = new System.Drawing.Point(232, 322);
+            this.cmbSemester.Location = new System.Drawing.Point(225, 322);
             this.cmbSemester.Name = "cmbSemester";
             this.cmbSemester.Size = new System.Drawing.Size(207, 28);
             this.cmbSemester.TabIndex = 19;
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Stencil", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(28, 530);
+            this.label2.Location = new System.Drawing.Point(28, 527);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(558, 38);
+            this.label2.Size = new System.Drawing.Size(837, 57);
             this.label2.TabIndex = 20;
             this.label2.Text = "Transaksi Permintaan Barang";
             // 
@@ -274,9 +273,8 @@
             // 
             // permintaanBarang
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(939, 943);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.label5);
@@ -304,6 +302,7 @@
             this.Controls.Add(this.btnKembali);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "permintaanBarang";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.WindowsDefaultBounds;
             this.Text = "PermintaanBarang";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
